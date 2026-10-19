@@ -1,0 +1,154 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+:root{--navy:#0d161d;--navy2:#13222b;--teal:#2bd4bd;--teal2:#1e9e8c;--gray:#c4ccd4}
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1080px;height:1920px;overflow:hidden;font-family:'Poppins',sans-serif;background:var(--navy)}
+.scene{position:absolute;inset:0;padding:230px 90px 0;opacity:0}
+.dark{background:radial-gradient(ellipse at 80% 10%,#1a3a3a 0%,var(--navy2) 40%,var(--navy) 100%);color:#f4f7f8}
+.light{background:linear-gradient(165deg,#fff 0%,#e9f2f0 100%);color:var(--navy)}
+.grid{position:absolute;inset:0;background-image:linear-gradient(rgba(43,212,189,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(43,212,189,.07) 1px,transparent 1px);background-size:60px 60px;mask-image:linear-gradient(180deg,#000 0%,transparent 65%)}
+.tag{display:inline-block;font-size:30px;font-weight:600;letter-spacing:5px;text-transform:uppercase;color:var(--teal);border:2.5px solid var(--teal);padding:12px 30px;border-radius:50px}
+.light .tag{color:var(--teal2);border-color:var(--teal2)}
+.h{font-size:104px;line-height:1.08;font-weight:800;letter-spacing:-1.5px;margin-top:50px}
+.h .w{display:inline-block;margin-right:22px}
+.t{color:var(--teal)} .light .t{color:var(--teal2)}
+.ul{position:relative;display:inline-block}
+.ul i{position:absolute;left:0;bottom:-6px;height:12px;width:100%;background:var(--teal);border-radius:6px;transform-origin:left;opacity:.9}
+.lead{font-size:42px;line-height:1.45;color:var(--gray);margin-top:44px;max-width:880px}
+.light .lead{color:#3b4a55}
+.big{font-size:360px;font-weight:800;line-height:.95;letter-spacing:-14px;background:linear-gradient(180deg,var(--teal) 0%,var(--teal2) 100%);-webkit-background-clip:text;color:transparent;margin-top:70px}
+.big small{font-size:170px;letter-spacing:-4px}
+.card{background:#fff;border-radius:32px;padding:46px 50px;box-shadow:0 24px 70px rgba(14,79,71,.14);border-left:12px solid var(--teal2);margin-top:60px}
+.card .k{font-size:30px;font-weight:600;color:var(--teal2);text-transform:uppercase;letter-spacing:3px}
+.card .v{font-size:48px;font-weight:700;margin-top:10px;line-height:1.25}
+.logo{position:absolute;left:90px;bottom:150px;height:72px}
+.people{display:flex;flex-direction:column;gap:28px;margin-top:70px}
+.p{background:rgba(255,255,255,.06);border:2px solid rgba(43,212,189,.4);border-radius:30px;padding:36px 44px;display:flex;justify-content:space-between;align-items:center}
+.p .n{font-size:44px;font-weight:700}.p .c{font-size:28px;color:var(--teal);font-weight:600;margin-top:4px}.p .ph{font-size:36px;color:var(--gray);font-weight:500}
+.cta{display:inline-block;margin-top:60px;background:var(--teal);color:var(--navy);font-size:44px;font-weight:700;padding:30px 60px;border-radius:70px}
+.bar{position:absolute;top:120px;left:90px;right:90px;height:6px;border-radius:3px;background:rgba(128,140,150,.25);z-index:5}
+.bar i{display:block;height:100%;width:0;background:var(--teal);border-radius:3px}
+svg.ill{position:absolute;right:30px;bottom:300px}
+</style></head><body>
+<div class="bar"><i id="prog"></i></div>
+
+<!-- CENA 1 -->
+<div class="scene dark" data-scene="0,5.2">
+  <div class="grid"></div>
+  <span class="tag" data-in="0.2,.5,pop">Reforma Tributária</span>
+  <div class="h">
+    <span class="w" data-in="0.5,.45,up">Vai</span><span class="w" data-in="0.65,.45,up">vender</span><span class="w" data-in="0.8,.45,up">ou</span><span class="w" data-in="0.95,.45,up">alugar</span><span class="w" data-in="1.1,.45,up">um</span><span class="w" data-in="1.25,.45,up">imóvel?</span><br>
+    <span class="w t ul" data-in="2.0,.5,up">A conta mudou.<i data-in="2.5,.6,sweep"></i></span>
+  </div>
+  <p class="lead" data-in="2.9,.6,fade">O que o IBS e a CBS significam para quem tem imóveis.</p>
+  <svg class="ill" width="680" height="680" viewBox="0 0 620 620" data-in="1.2,1.0,rise">
+    <defs>
+      <linearGradient id="gL" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1e9e8c"/><stop offset="1" stop-color="#0b3f39"/></linearGradient>
+      <linearGradient id="gR" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2bd4bd"/><stop offset="1" stop-color="#14786b"/></linearGradient>
+      <linearGradient id="gT" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7ff0de"/><stop offset="1" stop-color="#2bd4bd"/></linearGradient>
+      <radialGradient id="glow"><stop offset="0" stop-color="#2bd4bd" stop-opacity=".35"/><stop offset="1" stop-color="#2bd4bd" stop-opacity="0"/></radialGradient>
+    </defs>
+    <ellipse cx="310" cy="520" rx="290" ry="90" fill="url(#glow)"/>
+    <polygon points="310,560 70,440 310,320 550,440" fill="#16303a" stroke="#2bd4bd" stroke-opacity=".4" stroke-width="2"/>
+    <polygon points="250,470 170,430 170,140 250,180" fill="url(#gL)"/>
+    <polygon points="250,470 330,430 330,140 250,180" fill="url(#gR)"/>
+    <polygon points="250,180 170,140 250,100 330,140" fill="url(#gT)"/>
+    <g fill="#7ff0de" opacity=".55">
+      <polygon points="190,190 210,200 210,222 190,212"/><polygon points="220,205 240,215 240,237 220,227"/>
+      <polygon points="190,250 210,260 210,282 190,272"/><polygon points="220,265 240,275 240,297 220,287"/>
+      <polygon points="190,310 210,320 210,342 190,332"/><polygon points="220,325 240,335 240,357 220,347"/>
+      <polygon points="190,370 210,380 210,402 190,392"/>
+    </g>
+    <polygon points="400,500 330,465 330,385 400,420" fill="url(#gL)"/>
+    <polygon points="400,500 470,465 470,385 400,420" fill="url(#gR)"/>
+    <polygon points="330,385 365,320 435,355 400,420" fill="#e6eef0"/>
+    <polygon points="400,420 435,355 470,385" fill="#b9c6cc"/>
+    <polygon points="420,470 445,457 445,425 420,438" fill="#0d161d"/>
+    <g data-in="2.2,.6,drop">
+      <ellipse cx="480" cy="300" rx="44" ry="18" fill="#14786b"/><rect x="436" y="282" width="88" height="18" fill="#14786b"/><ellipse cx="480" cy="282" rx="44" ry="18" fill="#2bd4bd"/>
+      <ellipse cx="480" cy="262" rx="44" ry="18" fill="#14786b"/><rect x="436" y="244" width="88" height="18" fill="#14786b"/><ellipse cx="480" cy="244" rx="44" ry="18" fill="#2bd4bd"/>
+      <text x="480" y="252" text-anchor="middle" font-family="Poppins" font-weight="800" font-size="22" fill="#0d161d">%</text>
+    </g>
+  </svg>
+  <img class="logo" src="../marca/logo-transparente-texto-claro.png" data-in="0.3,.6,fade">
+</div>
+
+<!-- CENA 2 -->
+<div class="scene light" data-scene="5,10.2">
+  <span class="tag" data-in="5.3,.5,pop">Venda de imóveis</span>
+  <div class="h" style="font-size:84px">
+    <span class="w" data-in="5.5,.4,up">Quem</span><span class="w" data-in="5.6,.4,up">vende</span><span class="w" data-in="5.7,.4,up">imóvel</span><span class="w" data-in="5.8,.4,up">paga</span><span class="w" data-in="5.9,.4,up">IBS</span><span class="w" data-in="6.0,.4,up">e</span><span class="w" data-in="6.1,.4,up">CBS</span><br><span class="w t" data-in="6.3,.4,up">com desconto.</span>
+  </div>
+  <div class="big" data-in="6.5,.4,fade"><span data-count="6.5,1.4,50">0</span><small>%</small></div>
+  <p class="lead" data-in="7.6,.5,fade">de redução nas alíquotas para venda e outras operações com imóveis (LC 214/2025).</p>
+  <div class="card" data-in="8.3,.6,left"><div class="k">Na prática</div><div class="v">Construtoras e incorporadoras precisam refazer as contas de preço e margem.</div></div>
+  <img class="logo" src="../marca/logo-transparente-texto-escuro.png">
+</div>
+
+<!-- CENA 3 -->
+<div class="scene light" data-scene="10,15.2">
+  <span class="tag" data-in="10.3,.5,pop">Aluguel</span>
+  <div class="h" style="font-size:84px">
+    <span class="w" data-in="10.5,.4,up">No</span><span class="w" data-in="10.6,.4,up">aluguel,</span><span class="w" data-in="10.7,.4,up">o</span><br><span class="w t" data-in="10.9,.4,up">desconto é maior.</span>
+  </div>
+  <div class="big" data-in="11.2,.4,fade"><span data-count="11.2,1.4,70">0</span><small>%</small></div>
+  <p class="lead" data-in="12.3,.5,fade">de redução nas alíquotas de IBS e CBS sobre locação, cessão onerosa e arrendamento.</p>
+  <div class="card" data-in="13.0,.6,left"><div class="k">Aluguel residencial</div><div class="v">+ redutor social de R$ 600 por imóvel, corrigido pelo IPCA.</div></div>
+  <img class="logo" src="../marca/logo-transparente-texto-escuro.png">
+</div>
+
+<!-- CENA 4 -->
+<div class="scene dark" data-scene="15,21">
+  <div class="grid"></div>
+  <span class="tag" data-in="15.3,.5,pop">E agora?</span>
+  <div class="h" style="font-size:92px">
+    <span class="w" data-in="15.5,.4,up">Pessoa</span><span class="w" data-in="15.6,.4,up">física</span><span class="w" data-in="15.7,.4,up">ou</span><span class="w" data-in="15.8,.4,up">holding?</span><br>
+    <span class="w t ul" data-in="16.4,.5,up">Cada caso tem uma conta.<i data-in="16.9,.6,sweep"></i></span>
+  </div>
+  <div class="people">
+    <div class="p" data-in="17.4,.5,left"><div><div class="n">Elias Carvalho</div><div class="c">CRC-PI 014153/O</div></div><div class="ph">(89) 99457-4219</div></div>
+    <div class="p" data-in="17.7,.5,left"><div><div class="n">Maikon Figueiredo</div><div class="c">CRC-PI 011923/O</div></div><div class="ph">(89) 99404-5050</div></div>
+  </div>
+  <div class="cta" data-in="18.3,.5,pop" data-pulse="18.8">Chame no WhatsApp</div>
+  <img class="logo" src="../marca/logo-transparente-texto-claro.png">
+</div>
+
+<script>
+const TOTAL=21;
+const cl=x=>Math.max(0,Math.min(1,x));
+const ease=x=>1-Math.pow(1-x,3);
+const back=x=>{const c=1.7;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+function render(t){
+  document.getElementById('prog').style.width=(cl(t/TOTAL)*100)+'%';
+  document.querySelectorAll('[data-scene]').forEach(s=>{
+    const [a,b]=s.dataset.scene.split(',').map(Number);
+    const pin=cl((t-a)/0.35), pout=cl((t-(b-0.35))/0.35);
+    const vis=t>=a&&t<=b;
+    s.style.opacity=vis?Math.min(pin,1-pout*0):0;
+    s.style.transform=`translateX(${(1-ease(pin))*120}px)`;
+    s.style.zIndex=vis?Math.round(a*10):0;
+  });
+  document.querySelectorAll('[data-in]').forEach(e=>{
+    const [st,d,ty]=e.dataset.in.split(','); const p=cl((t-st)/d), q=ease(p);
+    let tr='',op=q;
+    if(ty==='up')tr=`translateY(${(1-q)*70}px)`;
+    if(ty==='left')tr=`translateX(${(1-q)*-160}px)`;
+    if(ty==='pop'){tr=`scale(${0.6+0.4*back(p)})`;op=cl(p*2)}
+    if(ty==='rise')tr=`translateY(${(1-q)*220}px)`;
+    if(ty==='drop')tr=`translateY(${(1-back(p))*-200}px)`;
+    if(ty==='sweep'){tr=`scaleX(${q})`;op=1}
+    e.style.opacity=op; if(tr)e.style.transform=tr;
+  });
+  document.querySelectorAll('[data-count]').forEach(e=>{
+    const [st,d,tg]=e.dataset.count.split(',').map(Number); e.textContent=Math.round(ease(cl((t-st)/d))*tg);
+  });
+  document.querySelectorAll('[data-pulse]').forEach(e=>{
+    const st=+e.dataset.pulse; if(t>st){const s=1+0.04*Math.sin((t-st)*2*Math.PI*1.2);e.style.transform=`scale(${s})`;}
+  });
+  // gentle float on illustration
+  const ill=document.querySelector('svg.ill'); if(t>2.2) ill.style.transform=`translateY(${Math.sin((t-2.2)*1.6)*10}px)`;
+}
+render(0);
+</script>
+</body></html>
