@@ -48,8 +48,19 @@ As imagens ficam públicas aqui para o Metricool conseguir buscá-las pelo link 
 
 ## Áudio / Reels
 
-- Por enquanto, apenas posts de imagem/carrossel no feed (sem áudio).
-- Reels só quando os sócios definirem as músicas da biblioteca do Instagram (registrar aqui nome e artista).
+- Quando os sócios pedirem fundo musical, o post sai como Reel (vídeo 1080x1920 com as telas em sequência, cerca de 5 s cada, sem o "ARRASTE →"), com música da biblioteca do Instagram aplicada pelo Metricool (`instagramData.audioConfiguration.audioId` = nome da música + artista).
+- Músicas definidas pelos sócios (nome e artista como aparecem no Instagram):
+  - Posts informativos:
+    - Information — BGM Studio
+    - Legendary — LAVLO
+    - Informative Sound Gallery — Dmitry Taras
+    - News Information — Bagja_Music
+    - Violin — Toneloom
+  - Posts de alerta (prazos, multas, mudanças urgentes):
+    - ALERTA GERAL! — TheTrend, Marquiori
+    - Emergency High Alert — PriWave
+    - Invincible — Giulio Cercato
+- Variar a música entre os posts, dentro da categoria certa.
 
 ## Onde salvar
 
