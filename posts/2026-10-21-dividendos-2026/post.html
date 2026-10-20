@@ -1,0 +1,192 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+:root{--navy:#0d161d;--navy2:#13222b;--teal:#2bd4bd;--teal2:#1e9e8c;--teal3:#0e4f47;--gray:#c4ccd4;--white:#f4f7f8;--ink:#3b4a55}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#000;font-family:'Poppins',sans-serif}
+.slide{width:1080px;height:1350px;position:relative;overflow:hidden;margin-bottom:20px;padding:96px 90px}
+.dark{background:radial-gradient(ellipse at 20% 10%,#1a3a3a 0%,var(--navy2) 45%,var(--navy) 100%);color:var(--white)}
+.light{background:linear-gradient(160deg,#ffffff 0%,#eef4f3 100%);color:var(--navy)}
+.dots{position:absolute;inset:0;background-image:radial-gradient(rgba(43,212,189,.18) 2px,transparent 2px);background-size:44px 44px;mask-image:linear-gradient(200deg,#000 0%,transparent 55%)}
+.logo{position:absolute;left:90px;bottom:80px;height:62px}
+.swipe{position:absolute;right:90px;bottom:92px;font-size:26px;font-weight:600;color:var(--teal2);letter-spacing:2px}
+.dark .swipe{color:var(--teal)}
+.step{display:flex;align-items:center;gap:22px}
+.step .b{width:74px;height:74px;border-radius:22px;background:var(--teal2);color:#fff;font-size:36px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.step .l{font-size:26px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(--teal2)}
+.step .l small{display:block;font-size:22px;letter-spacing:1px;text-transform:none;color:#7b8a94;font-weight:400}
+h2{font-size:66px;line-height:1.1;font-weight:800;margin-top:44px;letter-spacing:-.5px}
+h2 em{font-style:normal;color:var(--teal2)}
+p.lead{font-size:34px;line-height:1.45;color:var(--ink);margin-top:28px}
+p.lead b{color:var(--navy);font-weight:700}
+.foot{font-size:23px;color:#7b8a94;line-height:1.45}
+
+/* capa */
+.kicker{font-size:26px;font-weight:600;letter-spacing:5px;text-transform:uppercase;color:var(--teal);position:relative}
+.cover h1{position:absolute;left:90px;right:90px;top:640px;font-size:96px;line-height:1.02;font-weight:800;letter-spacing:-2px}
+.cover h1 em{font-style:normal;color:var(--teal)}
+.cover .sub{position:absolute;left:90px;right:120px;top:1010px;font-size:34px;line-height:1.4;color:var(--gray)}
+
+/* tela 2 */
+.receipt{margin-top:46px;background:#fff;border-radius:30px;box-shadow:0 24px 60px rgba(14,79,71,.14);overflow:hidden}
+.receipt .top{background:var(--navy);color:#fff;padding:26px 44px;font-size:26px;font-weight:600;letter-spacing:2px;display:flex;justify-content:space-between}
+.receipt .top span{color:var(--teal)}
+.row{display:flex;justify-content:space-between;align-items:baseline;padding:26px 44px;border-bottom:2px dashed #dbe5e3;font-size:34px}
+.row .k{color:var(--ink)}
+.row .v{font-weight:700}
+.row.hl{background:#e8f8f5;border-bottom:none}
+.row.hl .v{color:var(--teal2);font-size:52px;font-weight:800}
+
+/* tela 3 */
+.ramp{margin-top:56px;position:relative;height:430px}
+.axis{position:absolute;left:0;right:0;bottom:70px;height:4px;background:#c9d6d4}
+.lbl{position:absolute;bottom:0;font-size:26px;font-weight:600;color:var(--ink);transform:translateX(-50%);white-space:nowrap}
+.pct{position:absolute;font-size:44px;font-weight:800;color:var(--teal2);transform:translateX(-50%)}
+.zone{position:absolute;bottom:96px;font-size:24px;color:#7b8a94;transform:translateX(-50%);text-align:center;line-height:1.3}
+
+/* tela 4 */
+.bars{display:flex;gap:46px;margin-top:40px;align-items:flex-end;height:420px;position:relative}
+.bar{flex:1;display:flex;flex-direction:column;justify-content:flex-end;height:100%}
+.bar .seg{border-radius:16px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:28px;margin-top:8px;text-align:center;line-height:1.2}
+.bar .cap{font-size:26px;font-weight:600;color:var(--ink);text-align:center;margin-top:18px}
+.limit{position:absolute;left:90px;right:90px;border-top:4px dashed #e0574f}
+.limit span{position:absolute;right:0;top:-46px;background:#e0574f;color:#fff;font-size:24px;font-weight:700;padding:6px 18px;border-radius:30px}
+
+/* tela 5 */
+.dark h2 em{color:var(--teal)}
+.check{margin-top:44px;display:flex;flex-direction:column;gap:22px}
+.ck{display:flex;gap:24px;align-items:center;background:rgba(255,255,255,.05);border:1.5px solid rgba(43,212,189,.3);border-radius:24px;padding:24px 30px;font-size:31px;line-height:1.3}
+.ck i{flex:none;width:50px;height:50px;border-radius:50%;background:var(--teal);color:var(--navy);font-style:normal;font-weight:800;font-size:30px;display:flex;align-items:center;justify-content:center}
+.people{display:flex;gap:26px;margin-top:40px}
+.p{flex:1;border-left:6px solid var(--teal);padding:6px 0 6px 24px}
+.p .n{font-size:31px;font-weight:700}
+.p .c{font-size:22px;color:var(--teal);font-weight:600;margin-top:2px}
+.p .t{font-size:27px;color:var(--gray);margin-top:6px}
+</style></head><body>
+
+<!-- TELA 1 — CAPA -->
+<div class="slide dark cover" id="s1">
+  <div class="dots"></div>
+  <div class="kicker">Lucros e dividendos · 2026</div>
+  <svg style="position:absolute;right:60px;top:120px" width="560" height="520" viewBox="0 0 560 520">
+    <defs>
+      <linearGradient id="a1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1e9e8c"/><stop offset="1" stop-color="#0b3f39"/></linearGradient>
+      <linearGradient id="a2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2bd4bd"/><stop offset="1" stop-color="#14786b"/></linearGradient>
+      <linearGradient id="a3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7ff0de"/><stop offset="1" stop-color="#2bd4bd"/></linearGradient>
+      <radialGradient id="gl"><stop offset="0" stop-color="#2bd4bd" stop-opacity=".35"/><stop offset="1" stop-color="#2bd4bd" stop-opacity="0"/></radialGradient>
+    </defs>
+    <ellipse cx="280" cy="440" rx="270" ry="80" fill="url(#gl)"/>
+    <polygon points="280,490 60,380 280,270 500,380" fill="#16303a" stroke="#2bd4bd" stroke-opacity=".4" stroke-width="2"/>
+    <!-- prédio da empresa -->
+    <polygon points="200,410 120,370 120,130 200,170" fill="url(#a1)"/>
+    <polygon points="200,410 280,370 280,130 200,170" fill="url(#a2)"/>
+    <polygon points="200,170 120,130 200,90 280,130" fill="url(#a3)"/>
+    <g fill="#7ff0de" opacity=".5">
+      <polygon points="140,180 160,190 160,212 140,202"/><polygon points="170,195 190,205 190,227 170,217"/>
+      <polygon points="140,240 160,250 160,272 140,262"/><polygon points="170,255 190,265 190,287 170,277"/>
+      <polygon points="140,300 160,310 160,332 140,322"/><polygon points="170,315 190,325 190,347 170,337"/>
+    </g>
+    <!-- fluxo de moedas -->
+    <path d="M285 200 C 340 170, 380 190, 400 240" stroke="#2bd4bd" stroke-width="5" fill="none" stroke-dasharray="4 14" stroke-linecap="round"/>
+    <!-- pilha principal -->
+    <g>
+      <ellipse cx="420" cy="370" rx="50" ry="20" fill="#14786b"/><rect x="370" y="350" width="100" height="20" fill="#14786b"/><ellipse cx="420" cy="350" rx="50" ry="20" fill="#2bd4bd"/>
+      <ellipse cx="420" cy="328" rx="50" ry="20" fill="#14786b"/><rect x="370" y="308" width="100" height="20" fill="#14786b"/><ellipse cx="420" cy="308" rx="50" ry="20" fill="#2bd4bd"/>
+      <ellipse cx="420" cy="286" rx="50" ry="20" fill="#14786b"/><rect x="370" y="266" width="100" height="20" fill="#14786b"/><ellipse cx="420" cy="266" rx="50" ry="20" fill="#2bd4bd"/>
+      <text x="420" y="275" text-anchor="middle" font-family="Poppins" font-weight="800" font-size="24" fill="#0d161d">R$</text>
+    </g>
+    <!-- fatia retida -->
+    <g transform="translate(470,170)">
+      <circle cx="0" cy="0" r="54" fill="#0d161d" stroke="#2bd4bd" stroke-width="4"/>
+      <text x="0" y="12" text-anchor="middle" font-family="Poppins" font-weight="800" font-size="34" fill="#2bd4bd">10%</text>
+    </g>
+  </svg>
+  <h1>Sócio que recebe<br>dividendos:<br><em>o IR já chegou.</em></h1>
+  <p class="sub">As 3 regras da Lei 15.270/2025 que todo empresário precisa conhecer antes de fechar o ano.</p>
+  <img class="logo" src="../../marca/logo-transparente-texto-claro.png">
+  <div class="swipe">ARRASTE →</div>
+</div>
+
+<!-- TELA 2 — RETENÇÃO MENSAL -->
+<div class="slide light" id="s2">
+  <div class="step"><div class="b">1</div><div class="l">Retenção mensal<small>desde janeiro de 2026</small></div></div>
+  <h2>Passou de <em>R$ 50 mil</em> no mês? <em>10%</em> ficam retidos.</h2>
+  <p class="lead">Vale quando a <b>mesma empresa</b> paga lucros ao <b>mesmo sócio</b> pessoa física. O imposto incide sobre o <b>valor total</b>, não só sobre o que passou do limite.</p>
+  <div class="receipt">
+    <div class="top">EXEMPLO <span>1 empresa, 1 sócio, 1 mês</span></div>
+    <div class="row"><span class="k">Lucro distribuído</span><span class="v">R$ 60.000</span></div>
+    <div class="row"><span class="k">IR retido na fonte (10%)</span><span class="v">R$ 6.000</span></div>
+    <div class="row hl"><span class="k">Sócio recebe</span><span class="v">R$ 54.000</span></div>
+  </div>
+  <img class="logo" src="../../marca/logo-transparente-texto-escuro.png">
+  <div class="swipe">ARRASTE →</div>
+</div>
+
+<!-- TELA 3 — IRPF MÍNIMO -->
+<div class="slide light" id="s3">
+  <div class="step"><div class="b">2</div><div class="l">IRPF mínimo anual<small>declaração de 2027, ano-base 2026</small></div></div>
+  <h2>Renda acima de <em style="white-space:nowrap">R$ 600 mil</em> no ano entra na conta.</h2>
+  <p class="lead">Somam-se quase todos os rendimentos do ano, <b>inclusive os isentos</b>. A alíquota mínima sobe até 10%, e o que foi retido no mês é abatido.</p>
+  <div class="ramp">
+    <svg width="900" height="360" viewBox="0 0 900 360" style="position:absolute;left:0;top:0">
+      <defs><linearGradient id="rp" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2bd4bd" stop-opacity=".25"/><stop offset="1" stop-color="#1e9e8c"/></linearGradient></defs>
+      <rect x="0" y="246" width="300" height="10" rx="5" fill="#c9d6d4"/>
+      <polygon points="300,256 600,96 600,256" fill="url(#rp)"/>
+      <rect x="600" y="96" width="300" height="160" rx="0" fill="#1e9e8c"/>
+      <line x1="300" y1="70" x2="300" y2="290" stroke="#9fb3b0" stroke-width="2" stroke-dasharray="6 8"/>
+      <line x1="600" y1="70" x2="600" y2="290" stroke="#9fb3b0" stroke-width="2" stroke-dasharray="6 8"/>
+      <text x="150" y="220" text-anchor="middle" font-family="Poppins" font-weight="800" font-size="46" fill="#9fb3b0">0%</text>
+      <text x="530" y="230" text-anchor="middle" font-family="Poppins" font-weight="700" font-size="28" fill="#0e4f47">0 → 10%</text>
+      <text x="750" y="192" text-anchor="middle" font-family="Poppins" font-weight="800" font-size="60" fill="#ffffff">10%</text>
+      <text x="300" y="330" text-anchor="middle" font-family="Poppins" font-weight="600" font-size="26" fill="#3b4a55">R$ 600 mil</text>
+      <text x="600" y="330" text-anchor="middle" font-family="Poppins" font-weight="600" font-size="26" fill="#3b4a55">R$ 1,2 milhão</text>
+    </svg>
+  </div>
+  <p class="foot" style="margin-top:-30px">Ficam fora da soma, entre outros: poupança, LCI/LCA, CRI/CRA, ganho de capital (com exceções) e doação em adiantamento de herança.</p>
+  <img class="logo" src="../../marca/logo-transparente-texto-escuro.png">
+  <div class="swipe">ARRASTE →</div>
+</div>
+
+<!-- TELA 4 — REDUTOR -->
+<div class="slide light" id="s4">
+  <div class="step"><div class="b">3</div><div class="l">Redutor<small>empresa + sócio</small></div></div>
+  <h2>Carga somada acima de <em>34%</em>? O excesso vira crédito.</h2>
+  <p class="lead">Se o IRPJ e a CSLL efetivos da empresa mais o IR mínimo do sócio passarem de 34% (regra geral), o sócio abate a diferença.</p>
+  <div style="position:relative">
+    <div class="bars">
+      <div class="bar">
+        <div class="seg" style="height:64px;background:#2bd4bd;color:#0d161d">Sócio</div>
+        <div class="seg" style="height:200px;background:#0e4f47">Empresa<br>(IRPJ + CSLL)</div>
+      </div>
+      <div class="bar">
+        <div class="seg" style="height:60px;background:repeating-linear-gradient(45deg,#e0574f,#e0574f 12px,#ee7a73 12px,#ee7a73 24px);font-size:24px">excesso = crédito</div>
+        <div class="seg" style="height:64px;background:#2bd4bd;color:#0d161d">Sócio</div>
+        <div class="seg" style="height:250px;background:#0e4f47">Empresa<br>(IRPJ + CSLL)</div>
+      </div>
+      <div class="limit" style="left:0;right:0;bottom:324px"><span style="left:0;right:auto">limite 34%</span></div>
+    </div>
+    <div style="display:flex;gap:46px"><div class="cap" style="flex:1;font-size:26px;font-weight:600;color:#3b4a55;text-align:center;margin-top:18px">Dentro do limite</div><div class="cap" style="flex:1;font-size:26px;font-weight:600;color:#3b4a55;text-align:center;margin-top:18px">Acima do limite</div></div>
+  </div>
+  <p class="foot" style="margin-top:22px">Ilustração sem escala. Para bancos e seguradoras, o limite é diferente.</p>
+  <img class="logo" src="../../marca/logo-transparente-texto-escuro.png">
+  <div class="swipe">ARRASTE →</div>
+</div>
+
+<!-- TELA 5 — FECHAMENTO -->
+<div class="slide dark" id="s5">
+  <div class="dots"></div>
+  <div class="kicker">Antes de 31/12</div>
+  <h2 style="margin-top:30px;font-size:70px">Construtora, holding ou empresa: <em>revise as retiradas de 2026.</em></h2>
+  <div class="check">
+    <div class="ck"><i>✓</i>Quanto cada sócio já recebeu por mês</div>
+    <div class="ck"><i>✓</i>Pró-labore x lucros: o equilíbrio certo</div>
+    <div class="ck"><i>✓</i>Regime da empresa e estrutura da holding</div>
+    <div class="ck"><i>✓</i>Atas e escrituração em dia</div>
+  </div>
+  <div class="people">
+    <div class="p"><div class="n">Elias Carvalho</div><div class="c">CRC-PI 014153/O</div><div class="t">(89) 99457-4219</div></div>
+    <div class="p"><div class="n">Maikon Figueiredo</div><div class="c">CRC-PI 011923/O</div><div class="t">(89) 99404-5050</div></div>
+  </div>
+  <img class="logo" src="../../marca/logo-transparente-texto-claro.png">
+</div>
+</body></html>
