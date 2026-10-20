@@ -60,7 +60,8 @@ As imagens ficam públicas aqui para o Metricool conseguir buscá-las pelo link 
     - ALERTA GERAL! — TheTrend, Marquiori
     - Emergency High Alert — PriWave
     - Invincible — Giulio Cercato
-- Variar a música entre os posts, dentro da categoria certa.
+- Escolher a música que mais combina com o conteúdo de cada post (autorizado pelos sócios), dentro da categoria certa, variando entre os posts.
+- Limitação atual (20/10/2026): o Metricool só aplica música automaticamente se o Instagram for conta comercial ligada a uma página do Facebook, e hoje não é. Também não encontrou no catálogo "Informative Sound Gallery" (Dmitry Taras) nem "Information" (BGM Studio). Enquanto isso não mudar, Reel com música é agendado com `autoPublish: false`: na hora, o app do Metricool avisa os sócios, que abrem no Instagram, colocam a música indicada na mensagem e publicam.
 
 ## Onde salvar
 
