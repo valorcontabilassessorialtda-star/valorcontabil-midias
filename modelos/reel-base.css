@@ -34,7 +34,8 @@ body{width:1080px;height:1920px;overflow:hidden;font-family:'Poppins',sans-serif
 .people{display:flex;flex-direction:column;gap:28px;margin-top:60px}
 .p{background:rgba(255,255,255,.06);border:2px solid rgba(43,212,189,.4);border-radius:30px;padding:34px 44px;display:flex;justify-content:space-between;align-items:center}
 .p .n{font-size:44px;font-weight:700}
-.p .c{font-size:28px;color:var(--teal);font-weight:600;margin-top:4px}
+.p .r{font-size:30px;color:var(--gray);font-weight:500;margin-top:2px}
+.p .c{font-size:28px;color:var(--teal);font-weight:600;margin-top:2px}
 .p .ph{font-size:38px;color:#fff;font-weight:600;white-space:nowrap}
 .cta{display:inline-block;margin-top:56px;background:var(--teal);color:var(--navy);font-size:44px;font-weight:700;padding:30px 60px;border-radius:70px}
 .bar{position:absolute;top:150px;left:90px;right:90px;height:6px;border-radius:3px;background:rgba(128,140,150,.25);z-index:999}

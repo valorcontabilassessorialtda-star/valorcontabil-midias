@@ -20,6 +20,10 @@
 .nf{display:flex;gap:24px;margin-top:22px}
 .nf div{flex:1;background:#eef6f4;border-radius:22px;padding:24px 26px;font-size:32px;line-height:1.3;font-weight:600}
 .nf div span{display:block;font-size:26px;font-weight:500;color:var(--txt);margin-top:6px}
+
+/* Fundo próprio do Reel MEI: listras diagonais + círculos */
+.dark{background:repeating-linear-gradient(135deg,rgba(43,212,189,.05) 0 2px,transparent 2px 46px),radial-gradient(ellipse at 15% 5%,#1d4a45 0%,#13222b 45%,#0d161d 100%)}
+.light{background:radial-gradient(circle at 105% 18%,rgba(43,212,189,.20) 0 230px,transparent 231px),radial-gradient(circle at -10% 92%,rgba(30,158,140,.12) 0 300px,transparent 301px),linear-gradient(170deg,#ffffff 0%,#e6f4f1 100%)}
 </style></head><body>
 <div class="bar"><i id="prog"></i></div>
 
@@ -148,8 +152,8 @@
   <span class="tag" data-a=".2,.5,pop">Fale com a gente</span>
   <div class="h2" style="font-size:80px"><span class="w" data-a=".4,.4,up">Dúvida</span><span class="w" data-a=".5,.4,up">sobre</span><span class="w" data-a=".6,.4,up">o</span><span class="w" data-a=".7,.4,up">seu</span><span class="w" data-a=".8,.4,up">MEI?</span><br><span class="w t ul" data-a="1.1,.5,up">A gente explica.<i data-a="1.6,.6,sweep"></i></span></div>
   <div class="people">
-    <div class="p" data-a="1.8,.5,left"><div><div class="n">Elias Carvalho</div><div class="c">CRC-PI 014153/O</div></div><div class="ph">(89) 9 9457-4219</div></div>
-    <div class="p" data-a="2.1,.5,left"><div><div class="n">Maikon Figueiredo</div><div class="c">CRC-PI 011923/O</div></div><div class="ph">(89) 9 9404-5050</div></div>
+    <div class="p" data-a="1.8,.5,left"><div><div class="n">Elias Carvalho</div><div class="r">Contador</div><div class="c">CRC-PI 014153/O</div></div><div class="ph">(89) 9 9457-4219</div></div>
+    <div class="p" data-a="2.1,.5,left"><div><div class="n">Maikon Figueiredo</div><div class="r">Contador</div><div class="c">CRC-PI 011923/O</div></div><div class="ph">(89) 9 9404-5050</div></div>
   </div>
   <div class="cta" data-a="2.7,.5,pop" data-pulse="3.2">Chame no WhatsApp</div>
   <img class="logo" src="../../marca/logo-transparente-texto-claro.png">
