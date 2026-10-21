@@ -1,0 +1,122 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../../modelos/reel-base.css">
+<style>
+.cmp{display:flex;gap:24px;margin-top:50px}
+.cmp .c{flex:1;border-radius:30px;padding:36px 34px;text-align:left}
+.cmp .c .l{font-size:28px;font-weight:700;letter-spacing:2px;text-transform:uppercase}
+.cmp .c .n{font-size:66px;font-weight:800;margin-top:8px;letter-spacing:-1px}
+.cmp .c .s{font-size:28px;margin-top:4px}
+.cmp .old{background:#e4eaec;color:#7b8a94}
+.cmp .old .n{text-decoration:line-through;text-decoration-thickness:6px;text-decoration-color:rgba(123,138,148,.7)}
+.cmp .new{background:var(--navy);color:#fff}
+.cmp .new .l{color:var(--teal)} .cmp .new .n{color:var(--teal)} .cmp .new .s{color:var(--gray)}
+.scale{margin-top:60px}
+.row{display:flex;align-items:center;gap:30px;margin-bottom:30px}
+.row .rng{flex:0 0 380px;font-size:38px;font-weight:800;line-height:1.15}
+.row .rng small{display:block;font-size:26px;font-weight:600;color:#7b8a94;letter-spacing:1px}
+.row .res{flex:1;border-radius:26px;padding:28px 32px;font-size:36px;font-weight:700;line-height:1.25}
+.r1{background:var(--teal);color:var(--navy)}
+.r2{background:#bdeee6;color:var(--teal3)}
+.r3{background:#e4eaec;color:var(--txt)}
+.warn{display:inline-flex;align-items:center;gap:18px;font-size:30px;font-weight:700;color:#0d161d;background:#ffd166;padding:12px 30px;border-radius:50px;letter-spacing:3px;text-transform:uppercase}
+</style></head><body>
+<div class="bar"><i id="prog"></i></div>
+
+<!-- CENA 1 - GANCHO -->
+<div class="scene dark" data-dur="5">
+  <div class="grid"></div>
+  <span class="tag" data-a="0.1,.5,pop">Imposto de Renda</span>
+  <div class="h">
+    <span class="w" data-a=".4,.45,up">Ganha</span><span class="w" data-a=".5,.45,up">até</span><br><span class="w t" data-a=".7,.45,up">R$ 5 mil</span><span class="w" data-a=".8,.45,up">por</span><span class="w" data-a=".9,.45,up">mês?</span>
+  </div>
+  <p class="lead" data-a="1.6,.6,fade">Seu Imposto de Renda mudou em 2026. E a conta fecha na <b>declaração de 2027</b>.</p>
+  <svg class="ill" style="right:70px;top:1020px" width="600" height="520" viewBox="0 0 600 520" data-a="1,1,rise">
+    <defs>
+      <linearGradient id="i1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2bd4bd"/><stop offset="1" stop-color="#14786b"/></linearGradient>
+      <radialGradient id="ig"><stop offset="0" stop-color="#2bd4bd" stop-opacity=".35"/><stop offset="1" stop-color="#2bd4bd" stop-opacity="0"/></radialGradient>
+    </defs>
+    <ellipse cx="300" cy="450" rx="280" ry="70" fill="url(#ig)"/>
+    <!-- carteira / contracheque -->
+    <g transform="translate(120,150)">
+      <rect x="0" y="0" width="300" height="300" rx="26" fill="#f4f7f8"/>
+      <rect x="0" y="0" width="300" height="70" rx="26" fill="#2bd4bd"/><rect x="0" y="40" width="300" height="30" fill="#2bd4bd"/>
+      <text x="30" y="48" font-family="Poppins" font-weight="800" font-size="28" fill="#0d161d">CONTRACHEQUE</text>
+      <rect x="30" y="100" width="150" height="16" rx="8" fill="#b9c6cc"/><rect x="200" y="100" width="70" height="16" rx="8" fill="#b9c6cc"/>
+      <rect x="30" y="140" width="120" height="16" rx="8" fill="#d6dee2"/><rect x="200" y="140" width="70" height="16" rx="8" fill="#d6dee2"/>
+      <text x="30" y="215" font-family="Poppins" font-weight="700" font-size="26" fill="#3b4a55">IR retido</text>
+      <text x="270" y="215" text-anchor="end" font-family="Poppins" font-weight="800" font-size="30" fill="#1e9e8c">R$ 0,00</text>
+      <rect x="30" y="240" width="240" height="4" rx="2" fill="#d6dee2"/>
+    </g>
+    <g class="float">
+      <circle cx="470" cy="140" r="70" fill="#14786b"/><circle cx="470" cy="128" r="70" fill="url(#i1)"/>
+      <text x="470" y="148" text-anchor="middle" font-family="Poppins" font-weight="800" font-size="56" fill="#0d161d">0%</text>
+    </g>
+  </svg>
+  <img class="logo" src="../../marca/logo-transparente-texto-claro.png" data-a=".2,.6,fade">
+</div>
+
+<!-- CENA 2 - ZERO -->
+<div class="scene light" data-dur="6.5">
+  <span class="tag" data-a=".2,.5,pop">Desde janeiro de 2026</span>
+  <div class="h2"><span class="w" data-a=".4,.4,up">Quem</span><span class="w" data-a=".5,.4,up">ganha</span><span class="w" data-a=".6,.4,up">até</span><span class="w t" data-a=".7,.4,up">R$ 5.000</span><span class="w" data-a=".8,.4,up">por</span><span class="w" data-a=".9,.4,up">mês</span><span class="w" data-a="1.0,.4,up">paga:</span></div>
+  <div class="big" data-a="1.4,.5,pop">R$ 0</div>
+  <p class="lead" data-a="2.1,.5,fade">de Imposto de Renda descontado no salário.</p>
+  <div class="card" data-a="2.9,.6,left"><div class="k">Vale também</div><div class="v">para o 13º salário.</div><div class="s">Lei 15.270/2025.</div></div>
+  <img class="logo" src="../../marca/logo-transparente-texto-escuro.png">
+</div>
+
+<!-- CENA 3 - DESCONTO PARCIAL -->
+<div class="scene light" data-dur="8">
+  <span class="tag" data-a=".2,.5,pop">Entre R$ 5 mil e R$ 7.350</span>
+  <div class="h2"><span class="w" data-a=".4,.4,up">Ganha</span><span class="w" data-a=".5,.4,up">um</span><span class="w" data-a=".6,.4,up">pouco</span><span class="w" data-a=".7,.4,up">mais?</span><br><span class="w t" data-a=".9,.4,up">Tem desconto parcial.</span></div>
+  <p class="lead" data-a="1.4,.5,fade">Exemplo da Receita Federal: salário de <b>R$ 6.000</b> por mês.</p>
+  <div class="cmp">
+    <div class="c old" data-a="2.0,.5,up"><div class="l">Sem a nova regra</div><div class="n">R$ 574,29</div><div class="s">de IR por mês</div></div>
+    <div class="c new" data-a="2.7,.5,up"><div class="l">Com a nova regra</div><div class="n">R$ <span data-count="2.7,1.2,394.54,2">0</span></div><div class="s">de IR por mês</div></div>
+  </div>
+  <p class="foot" data-a="3.8,.6,fade">Quanto mais perto de R$ 5 mil, maior o desconto. Acima de R$ 7.350, vale a tabela normal.</p>
+  <img class="logo" src="../../marca/logo-transparente-texto-escuro.png">
+</div>
+
+<!-- CENA 4 - DECLARAÇÃO 2027 -->
+<div class="scene light" data-dur="8">
+  <span class="tag" data-a=".2,.5,pop">Declaração de 2027</span>
+  <div class="h2"><span class="w" data-a=".4,.4,up">No</span><span class="w" data-a=".5,.4,up">ajuste</span><span class="w" data-a=".6,.4,up">anual,</span><br><span class="w" data-a=".7,.4,up">vale</span><span class="w t" data-a=".9,.4,up">o ano inteiro.</span></div>
+  <p class="lead" data-a="1.3,.5,fade">Soma dos rendimentos tributáveis de 2026:</p>
+  <div class="scale">
+    <div class="row" data-a="1.9,.5,left"><div class="rng"><small>ATÉ</small>R$ 60 mil</div><div class="res r1">Imposto zerado</div></div>
+    <div class="row" data-a="2.6,.5,left"><div class="rng"><small>DE R$ 60 MIL ATÉ</small>R$ 88.200</div><div class="res r2">Desconto parcial</div></div>
+    <div class="row" data-a="3.3,.5,left"><div class="rng"><small>ACIMA DE</small>R$ 88.200</div><div class="res r3">Regra normal da tabela</div></div>
+  </div>
+  <img class="logo" src="../../marca/logo-transparente-texto-escuro.png">
+</div>
+
+<!-- CENA 5 - ATENÇÃO -->
+<div class="scene dark" data-dur="8.5">
+  <div class="dots"></div>
+  <span class="warn" data-a=".2,.5,pop">⚠ Atenção</span>
+  <div class="h2"><span class="w" data-a=".4,.4,up">Imposto</span><span class="w" data-a=".5,.4,up">zero</span><span class="w t" data-a=".7,.4,up">não é</span><span class="w" data-a=".8,.4,up">o</span><span class="w" data-a=".9,.4,up">mesmo</span><span class="w" data-a="1.0,.4,up">que</span><span class="w" data-a="1.1,.4,up">não</span><span class="w" data-a="1.2,.4,up">declarar.</span></div>
+  <div class="chk">
+    <div class="ci" data-a="1.8,.5,left"><div class="ic">1</div><div class="tx"><b>Dois empregos, aluguel ou outra renda?</b> Somados, podem passar de R$ 60 mil no ano e gerar imposto a pagar.</div></div>
+    <div class="ci" data-a="2.8,.5,left"><div class="ic">2</div><div class="tx"><b>Quem é obrigado a declarar em 2027</b> a Receita define no início do ano.</div></div>
+    <div class="ci" data-a="3.8,.5,left"><div class="ic">3</div><div class="tx"><b>Guarde informes e recibos de 2026</b>: saúde, educação e aluguel.</div></div>
+  </div>
+  <img class="logo" src="../../marca/logo-transparente-texto-claro.png">
+</div>
+
+<!-- CENA 6 - CONTATO -->
+<div class="scene dark" data-dur="6">
+  <div class="grid"></div>
+  <span class="tag" data-a=".2,.5,pop">Fale com a gente</span>
+  <div class="h2" style="font-size:80px"><span class="w" data-a=".4,.4,up">Quer</span><span class="w" data-a=".5,.4,up">saber</span><span class="w" data-a=".6,.4,up">como</span><span class="w" data-a=".7,.4,up">fica</span><span class="w" data-a=".8,.4,up">o</span><span class="w" data-a=".9,.4,up">seu?</span><br><span class="w t ul" data-a="1.1,.5,up">A gente faz a conta.<i data-a="1.6,.6,sweep"></i></span></div>
+  <div class="people">
+    <div class="p" data-a="1.8,.5,left"><div><div class="n">Elias Carvalho</div><div class="c">CRC-PI 014153/O</div></div><div class="ph">(89) 9 9457-4219</div></div>
+    <div class="p" data-a="2.1,.5,left"><div><div class="n">Maikon Figueiredo</div><div class="c">CRC-PI 011923/O</div></div><div class="ph">(89) 9 9404-5050</div></div>
+  </div>
+  <div class="cta" data-a="2.7,.5,pop" data-pulse="3.2">Chame no WhatsApp</div>
+  <img class="logo" src="../../marca/logo-transparente-texto-claro.png">
+</div>
+
+<script src="../../modelos/reel-base.js"></script>
+</body></html>

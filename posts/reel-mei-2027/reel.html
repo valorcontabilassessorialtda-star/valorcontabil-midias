@@ -1,0 +1,159 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../../modelos/reel-base.css">
+<style>
+.bars{display:flex;align-items:flex-end;gap:40px;height:620px;margin-top:70px;padding-bottom:0;border-bottom:4px solid #cfd9dc}
+.bc{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%}
+.bv{font-size:46px;font-weight:800;margin-bottom:16px;white-space:nowrap}
+.bb{width:100%;border-radius:22px 22px 0 0;background:linear-gradient(180deg,var(--teal) 0%,var(--teal2) 100%);transform-origin:bottom}
+.bb.g{background:linear-gradient(180deg,#cfd9dc,#9aa8b2)}
+.by{display:flex;gap:40px;margin-top:18px}
+.by div{flex:1;text-align:center;font-size:34px;font-weight:700;color:var(--txt)}
+.people-n{display:flex;align-items:center;gap:60px;margin-top:80px}
+.pc{flex:1;text-align:center}
+.pc .lbl{font-size:32px;font-weight:700;color:#7b8a94;letter-spacing:2px;text-transform:uppercase}
+.pc.on .lbl{color:var(--teal2)}
+.figs{display:flex;justify-content:center;gap:16px;margin-top:24px;height:240px;align-items:flex-end}
+.arrow{font-size:90px;color:var(--teal2);font-weight:800}
+.split{display:flex;flex-direction:column;gap:30px;margin-top:50px}
+.who{font-size:30px;font-weight:700;letter-spacing:3px;text-transform:uppercase}
+.nf{display:flex;gap:24px;margin-top:22px}
+.nf div{flex:1;background:#eef6f4;border-radius:22px;padding:24px 26px;font-size:32px;line-height:1.3;font-weight:600}
+.nf div span{display:block;font-size:26px;font-weight:500;color:var(--txt);margin-top:6px}
+</style></head><body>
+<div class="bar"><i id="prog"></i></div>
+
+<!-- CENA 1 - GANCHO -->
+<div class="scene dark" data-dur="5">
+  <div class="grid"></div>
+  <span class="tag" data-a="0.1,.5,pop">MEI em 2027</span>
+  <div class="h">
+    <span class="w" data-a=".4,.45,up">É</span><span class="w" data-a=".5,.45,up">MEI</span><span class="w" data-a=".6,.45,up">ou</span><span class="w" data-a=".7,.45,up">quer</span><span class="w" data-a=".8,.45,up">ser?</span><br>
+    <span class="w t ul" data-a="1.4,.5,up">2027 muda tudo.<i data-a="1.9,.6,sweep"></i></span>
+  </div>
+  <p class="lead" data-a="2.3,.6,fade">4 novidades explicadas de um jeito simples.</p>
+  <svg class="ill" style="right:60px;top:1000px" width="620" height="560" viewBox="0 0 620 560" data-a="1,1,rise">
+    <defs>
+      <linearGradient id="m1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1e9e8c"/><stop offset="1" stop-color="#0b3f39"/></linearGradient>
+      <linearGradient id="m2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2bd4bd"/><stop offset="1" stop-color="#14786b"/></linearGradient>
+      <radialGradient id="mg"><stop offset="0" stop-color="#2bd4bd" stop-opacity=".35"/><stop offset="1" stop-color="#2bd4bd" stop-opacity="0"/></radialGradient>
+    </defs>
+    <ellipse cx="310" cy="470" rx="290" ry="80" fill="url(#mg)"/>
+    <polygon points="310,520 80,405 310,290 540,405" fill="#16303a" stroke="#2bd4bd" stroke-opacity=".4" stroke-width="2"/>
+    <!-- lojinha -->
+    <polygon points="300,450 170,385 170,250 300,315" fill="url(#m1)"/>
+    <polygon points="300,450 430,385 430,250 300,315" fill="url(#m2)"/>
+    <polygon points="170,250 300,185 430,250 300,315" fill="#e6eef0"/>
+    <!-- toldo -->
+    <g>
+      <polygon points="300,330 430,265 455,290 325,355" fill="#f4f7f8"/>
+      <polygon points="326,317 352,304 377,329 351,342" fill="#2bd4bd"/>
+      <polygon points="378,291 404,278 429,303 403,316" fill="#2bd4bd"/>
+    </g>
+    <polygon points="330,430 365,412 365,355 330,373" fill="#0d161d"/>
+    <polygon points="385,402 415,387 415,350 385,365" fill="#7ff0de" opacity=".7"/>
+    <!-- placa MEI -->
+    <g class="float">
+      <rect x="440" y="90" width="150" height="80" rx="16" fill="#2bd4bd"/>
+      <text x="515" y="143" text-anchor="middle" font-family="Poppins" font-weight="800" font-size="38" fill="#0d161d">MEI</text>
+      <circle cx="120" cy="170" r="40" fill="#14786b"/><circle cx="120" cy="160" r="40" fill="#2bd4bd"/>
+      <text x="120" y="174" text-anchor="middle" font-family="Poppins" font-weight="800" font-size="34" fill="#0d161d">R$</text>
+    </g>
+  </svg>
+  <img class="logo" src="../../marca/logo-transparente-texto-claro.png" data-a=".2,.6,fade">
+</div>
+
+<!-- CENA 2 - LIMITE -->
+<div class="scene light" data-dur="7.5">
+  <span class="tag" data-a=".2,.5,pop">1 · Limite de faturamento</span>
+  <div class="h2"><span class="w" data-a=".4,.4,up">Você</span><span class="w" data-a=".5,.4,up">vai</span><span class="w" data-a=".6,.4,up">poder</span><br><span class="w t" data-a=".8,.4,up">faturar mais.</span></div>
+  <div class="bars">
+    <div class="bc"><div class="bv" data-a="1.2,.4,fade">R$ 81 mil</div><div class="bb g" style="height:300px" data-a="1.0,.6,fade"></div></div>
+    <div class="bc"><div class="bv t" data-a="1.9,.4,fade">R$ 110 mil</div><div class="bb" style="height:407px" data-a="1.7,.6,fade"></div></div>
+    <div class="bc"><div class="bv t" data-a="2.6,.4,fade">R$ 140 mil</div><div class="bb" style="height:518px" data-a="2.4,.6,fade"></div></div>
+  </div>
+  <div class="by"><div>até 2026</div><div>2027</div><div>a partir de 2028</div></div>
+  <p class="foot" data-a="3.3,.6,fade">Limite por ano. Em 2027: R$ 9.166,67 por mês, em média. Projeto aprovado pelo Congresso em outubro/2026 (PLP 186/2026).</p>
+  <img class="logo" src="../../marca/logo-transparente-texto-escuro.png">
+</div>
+
+<!-- CENA 3 - EMPREGADOS -->
+<div class="scene light" data-dur="6">
+  <span class="tag" data-a=".2,.5,pop">2 · Funcionários</span>
+  <div class="h2"><span class="w" data-a=".4,.4,up">O</span><span class="w" data-a=".5,.4,up">MEI</span><span class="w" data-a=".6,.4,up">poderá</span><span class="w" data-a=".7,.4,up">ter</span><br><span class="w t" data-a=".9,.4,up">até 2 empregados.</span></div>
+  <div class="people-n">
+    <div class="pc" data-a="1.3,.5,up"><div class="lbl">Hoje</div>
+      <div class="figs"><svg width="120" height="230" viewBox="0 0 120 230"><circle cx="60" cy="45" r="38" fill="#9aa8b2"/><rect x="12" y="95" width="96" height="130" rx="40" fill="#b9c6cc"/></svg></div></div>
+    <div class="arrow" data-a="1.8,.4,pop">→</div>
+    <div class="pc on" data-a="2.2,.5,up"><div class="lbl">Nova regra</div>
+      <div class="figs"><svg width="120" height="230" viewBox="0 0 120 230"><circle cx="60" cy="45" r="38" fill="#1e9e8c"/><rect x="12" y="95" width="96" height="130" rx="40" fill="#2bd4bd"/></svg><svg width="120" height="230" viewBox="0 0 120 230"><circle cx="60" cy="45" r="38" fill="#1e9e8c"/><rect x="12" y="95" width="96" height="130" rx="40" fill="#2bd4bd"/></svg></div></div>
+  </div>
+  <div class="card" data-a="2.9,.6,left"><div class="k">Regra</div><div class="v">Cada um recebendo o salário mínimo ou o piso da categoria.</div></div>
+  <img class="logo" src="../../marca/logo-transparente-texto-escuro.png">
+</div>
+
+<!-- CENA 4 - DÍVIDAS -->
+<div class="scene light" data-dur="7">
+  <span class="tag" data-a=".2,.5,pop">3 · Dívidas</span>
+  <div class="h2"><span class="w" data-a=".4,.4,up">Perdão</span><span class="w" data-a=".5,.4,up">das</span><span class="w" data-a=".6,.4,up">dívidas</span><br><span class="w t" data-a=".8,.4,up">federais do MEI.</span></div>
+  <div class="big" style="font-size:260px" data-a="1.1,.4,fade"><span data-count="1.1,1.3,100">0</span><small>%</small></div>
+  <p class="lead" style="margin-top:10px" data-a="1.8,.5,fade">dos débitos com a União até <b>13/10/2026</b>, com multa e juros.</p>
+  <div class="card" data-a="2.6,.6,left"><div class="k">Condição</div><div class="v">Pagar o DAS em dia por 6 meses.</div><div class="s">Dívidas com estado e município ficam de fora.</div></div>
+  <img class="logo" src="../../marca/logo-transparente-texto-escuro.png">
+</div>
+
+<!-- CENA 5 - NOTA FISCAL -->
+<div class="scene light" data-dur="9">
+  <span class="tag" data-a=".2,.5,pop">4 · Nota fiscal</span>
+  <div class="h2" style="font-size:72px"><span class="w" data-a=".4,.4,up">Quando</span><span class="w" data-a=".5,.4,up">o</span><span class="w" data-a=".6,.4,up">MEI</span><span class="w" data-a=".7,.4,up">emite</span><span class="w t" data-a=".8,.4,up">nota?</span></div>
+  <div class="split">
+    <div class="card" style="margin-top:0" data-a="1.2,.6,left">
+      <div class="who" style="color:var(--teal2)">Vendeu para empresa ou órgão público</div>
+      <div class="v" style="font-size:40px">Nota obrigatória. E é grátis:</div>
+      <div class="nf"><div>Serviço<span>NFS-e nacional</span></div><div>Mercadoria<span>Nota Fiscal Fácil</span></div></div>
+    </div>
+    <div class="card alt" style="margin-top:0" data-a="2.6,.6,left">
+      <div class="who" style="color:#7b8a94">Vendeu para pessoa física</div>
+      <div class="v" style="font-size:40px">O governo anunciou decreto para manter a dispensa.</div>
+      <div class="s">Fique de olho na publicação oficial.</div>
+    </div>
+  </div>
+  <p class="foot" data-a="3.6,.6,fade">Novas regras de documentos fiscais do MEI: Resolução CGSN 190/2026, em regra a partir de 01/01/2027.</p>
+  <img class="logo" src="../../marca/logo-transparente-texto-escuro.png">
+</div>
+
+<!-- CENA 6 - O QUE FAZER -->
+<div class="scene dark" data-dur="7.5">
+  <div class="dots"></div>
+  <span class="tag" data-a=".2,.5,pop">O que fazer agora</span>
+  <div class="h2"><span class="w" data-a=".4,.4,up">Prepare</span><span class="w" data-a=".5,.4,up">seu</span><span class="w t" data-a=".6,.4,up">MEI:</span></div>
+  <div class="chk">
+    <div class="ci" data-a="1.0,.5,left"><div class="ic">1</div><div class="tx"><b>Coloque o DAS em dia.</b> É ele que garante o perdão das dívidas.</div></div>
+    <div class="ci" data-a="1.8,.5,left"><div class="ic">2</div><div class="tx"><b>Teste o emissor gratuito de nota</b> antes de precisar dele.</div></div>
+    <div class="ci" data-a="2.6,.5,left"><div class="ic">3</div><div class="tx"><b>Anote o faturamento</b> todo mês para não passar do limite.</div></div>
+  </div>
+  <svg class="ill" style="right:90px;top:1180px" width="360" height="380" viewBox="0 0 360 380" data-a="3.2,.8,rise">
+    <ellipse cx="180" cy="350" rx="150" ry="26" fill="#2bd4bd" opacity=".15"/>
+    <rect x="60" y="40" width="240" height="300" rx="26" fill="#13222b" stroke="#2bd4bd" stroke-width="4"/>
+    <rect x="125" y="20" width="110" height="46" rx="14" fill="#2bd4bd"/>
+    <g fill="none" stroke="#2bd4bd" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"><path d="M100 120 l16 16 l28 -30"/><path d="M100 200 l16 16 l28 -30"/><path d="M100 280 l16 16 l28 -30"/></g>
+    <g fill="#c4ccd4" opacity=".5"><rect x="165" y="118" width="100" height="14" rx="7"/><rect x="165" y="198" width="100" height="14" rx="7"/><rect x="165" y="278" width="100" height="14" rx="7"/></g>
+  </svg>
+  <img class="logo" src="../../marca/logo-transparente-texto-claro.png">
+</div>
+
+<!-- CENA 7 - CONTATO -->
+<div class="scene dark" data-dur="6">
+  <div class="grid"></div>
+  <span class="tag" data-a=".2,.5,pop">Fale com a gente</span>
+  <div class="h2" style="font-size:80px"><span class="w" data-a=".4,.4,up">Dúvida</span><span class="w" data-a=".5,.4,up">sobre</span><span class="w" data-a=".6,.4,up">o</span><span class="w" data-a=".7,.4,up">seu</span><span class="w" data-a=".8,.4,up">MEI?</span><br><span class="w t ul" data-a="1.1,.5,up">A gente explica.<i data-a="1.6,.6,sweep"></i></span></div>
+  <div class="people">
+    <div class="p" data-a="1.8,.5,left"><div><div class="n">Elias Carvalho</div><div class="c">CRC-PI 014153/O</div></div><div class="ph">(89) 9 9457-4219</div></div>
+    <div class="p" data-a="2.1,.5,left"><div><div class="n">Maikon Figueiredo</div><div class="c">CRC-PI 011923/O</div></div><div class="ph">(89) 9 9404-5050</div></div>
+  </div>
+  <div class="cta" data-a="2.7,.5,pop" data-pulse="3.2">Chame no WhatsApp</div>
+  <img class="logo" src="../../marca/logo-transparente-texto-claro.png">
+</div>
+
+<script src="../../modelos/reel-base.js"></script>
+</body></html>

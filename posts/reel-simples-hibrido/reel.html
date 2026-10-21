@@ -1,0 +1,114 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../../modelos/reel-base.css">
+<style>
+.cal{display:flex;align-items:center;gap:40px;margin-top:70px}
+.calbox{flex:0 0 330px;width:330px;border-radius:34px;overflow:hidden;background:#f4f7f8;box-shadow:0 30px 70px rgba(0,0,0,.35)}
+.calbox .m{background:var(--teal);color:var(--navy);font-size:40px;font-weight:800;text-align:center;padding:16px 0;letter-spacing:4px}
+.calbox .d{font-size:190px;font-weight:800;color:var(--navy);text-align:center;line-height:1.05;padding:10px 0 24px;letter-spacing:-6px}
+.cal .txt{font-size:42px;line-height:1.35;color:var(--gray)} .cal .txt b{color:#fff}
+.guias{display:flex;gap:26px;margin-top:56px}
+.guia{flex:1;border-radius:30px;padding:34px 30px;min-height:520px}
+.guia .gt{font-size:30px;font-weight:800;letter-spacing:2px;text-transform:uppercase}
+.guia .gs{font-size:26px;margin-top:4px;font-weight:500}
+.chip{display:block;margin-top:16px;border-radius:18px;padding:16px 20px;font-size:30px;font-weight:700}
+.g1{background:#fff;box-shadow:0 20px 50px rgba(14,79,71,.12)} .g1 .gt{color:var(--teal2)} .g1 .gs{color:var(--txt)}
+.g1 .chip{background:#eef6f4;color:var(--navy)}
+.g2{background:var(--navy);color:#fff} .g2 .gt{color:var(--teal)} .g2 .gs{color:var(--gray)}
+.g2 .chip{background:var(--teal);color:var(--navy)}
+.vs{display:flex;flex-direction:column;gap:28px;margin-top:50px}
+.tl{margin-top:60px;position:relative;padding-left:76px}
+.tl:before{content:"";position:absolute;left:24px;top:24px;bottom:40px;width:6px;border-radius:3px;background:linear-gradient(180deg,var(--teal),#b9c6cc)}
+.st{position:relative;margin-bottom:46px}
+.st:before{content:"";position:absolute;left:-66px;top:12px;width:32px;height:32px;border-radius:50%;background:#fff;border:7px solid #b9c6cc}
+.st.hl:before{border-color:var(--teal2);background:var(--teal);box-shadow:0 0 0 14px rgba(43,212,189,.2)}
+.st .when{font-size:32px;font-weight:800;color:#7b8a94;text-transform:uppercase;letter-spacing:1px}
+.st.hl .when{color:var(--teal2)}
+.st .what{font-size:42px;font-weight:700;line-height:1.25;margin-top:4px}
+.st .det{font-size:30px;color:var(--txt);margin-top:6px;line-height:1.4}
+</style></head><body>
+<div class="bar"><i id="prog"></i></div>
+
+<!-- CENA 1 - GANCHO -->
+<div class="scene dark" data-dur="5.5">
+  <div class="grid"></div>
+  <span class="tag" data-a="0.1,.5,pop">Simples Nacional</span>
+  <div class="h">
+    <span class="w" data-a=".4,.45,up">Sua</span><span class="w" data-a=".5,.45,up">empresa</span><span class="w" data-a=".6,.45,up">é</span><span class="w" data-a=".7,.45,up">do</span><span class="w t" data-a=".8,.45,up">Simples?</span>
+  </div>
+  <div class="cal">
+    <div class="calbox" data-a="1.4,.6,pop"><div class="m">OUTUBRO</div><div class="d">30</div></div>
+    <div class="txt" data-a="2.1,.6,right">É o prazo de uma <b>decisão que vale para 2027</b>: o Simples híbrido.</div>
+  </div>
+  <img class="logo" src="../../marca/logo-transparente-texto-claro.png" data-a=".2,.6,fade">
+</div>
+
+<!-- CENA 2 - O QUE É -->
+<div class="scene light" data-dur="8.5">
+  <span class="tag" data-a=".2,.5,pop">O que é</span>
+  <div class="h2" style="font-size:72px"><span class="w" data-a=".4,.4,up">Em</span><span class="w" data-a=".5,.4,up">2027</span><span class="w" data-a=".6,.4,up">chegam</span><span class="w" data-a=".7,.4,up">o</span><span class="w t" data-a=".8,.4,up">IBS e a CBS.</span><span class="w" data-a="1.0,.4,up">Você</span><span class="w" data-a="1.1,.4,up">escolhe</span><span class="w" data-a="1.2,.4,up">onde</span><span class="w" data-a="1.3,.4,up">pagar:</span></div>
+  <div class="guias">
+    <div class="guia g1" data-a="1.9,.6,up">
+      <div class="gt">Simples “puro”</div><div class="gs">Padrão. Não precisa fazer nada.</div>
+      <span class="chip">Tudo no DAS</span><span class="chip">IBS e CBS também no DAS</span><span class="chip">Rotina como hoje</span>
+    </div>
+    <div class="guia g2" data-a="2.8,.6,up">
+      <div class="gt">Simples híbrido</div><div class="gs">Precisa optar.</div>
+      <span class="chip">Demais tributos no DAS</span><span class="chip">IBS e CBS por fora, no regime regular</span>
+    </div>
+  </div>
+  <img class="logo" src="../../marca/logo-transparente-texto-escuro.png">
+</div>
+
+<!-- CENA 3 - PARA QUEM -->
+<div class="scene light" data-dur="8">
+  <span class="tag" data-a=".2,.5,pop">Para quem faz sentido</span>
+  <div class="h2"><span class="w" data-a=".4,.4,up">A</span><span class="w" data-a=".5,.4,up">chave</span><span class="w" data-a=".6,.4,up">é</span><span class="w" data-a=".7,.4,up">o</span><span class="w t" data-a=".8,.4,up">crédito.</span></div>
+  <div class="vs">
+    <div class="card" style="margin-top:0" data-a="1.3,.6,left"><div class="k">Vende para outras empresas?</div><div class="v">No híbrido, seu cliente aproveita o crédito integral de IBS e CBS.</div><div class="s">Sua empresa também abate os créditos das compras.</div></div>
+    <div class="card alt" style="margin-top:0" data-a="2.6,.6,left"><div class="k">Mas atenção</div><div class="v">Muda o caixa, os custos e a rotina fiscal.</div><div class="s">Precisa de simulação antes de decidir.</div></div>
+  </div>
+  <img class="logo" src="../../marca/logo-transparente-texto-escuro.png">
+</div>
+
+<!-- CENA 4 - PRAZOS -->
+<div class="scene light" data-dur="8">
+  <span class="tag" data-a=".2,.5,pop">Prazos</span>
+  <div class="h2"><span class="w" data-a=".4,.4,up">Anote</span><span class="w" data-a=".5,.4,up">as</span><span class="w t" data-a=".6,.4,up">datas:</span></div>
+  <div class="tl">
+    <div class="st hl" data-a="1.0,.5,left"><div class="when">Até 30/10/2026</div><div class="what">Opção pelo Simples híbrido</div><div class="det">Vale de janeiro a junho de 2027.</div></div>
+    <div class="st" data-a="1.8,.5,left"><div class="when">03/11 a 20/12/2026</div><div class="what">Prazo para cancelar a opção</div></div>
+    <div class="st" data-a="2.6,.5,left"><div class="when">Março de 2027</div><div class="what">Nova janela</div><div class="det">Para entrar ou sair no 2º semestre de 2027.</div></div>
+  </div>
+  <p class="foot" data-a="3.3,.6,fade">Resolução CGSN 194/2026. A opção é feita no Portal de Serviços da Receita Federal.</p>
+  <img class="logo" src="../../marca/logo-transparente-texto-escuro.png">
+</div>
+
+<!-- CENA 5 - EXIGÊNCIAS 2027 -->
+<div class="scene dark" data-dur="9">
+  <div class="dots"></div>
+  <span class="tag" data-a=".2,.5,pop">Em 2027, todo optante</span>
+  <div class="h2" style="font-size:74px"><span class="w" data-a=".4,.4,up">3</span><span class="w" data-a=".5,.4,up">mudanças</span><span class="w" data-a=".6,.4,up">que</span><span class="w" data-a=".7,.4,up">valem</span><span class="w" data-a=".8,.4,up">para</span><span class="w t" data-a=".9,.4,up">todos:</span></div>
+  <div class="chk">
+    <div class="ci" data-a="1.4,.5,left"><div class="ic">1</div><div class="tx"><b>Faturamento ligado à nota.</b> A receita passa a ser vinculada à emissão do documento fiscal.</div></div>
+    <div class="ci" data-a="2.4,.5,left"><div class="ic">2</div><div class="tx"><b>A Defis deixa de existir separada:</b> passa a ser feita no PGDAS-D, de janeiro a março.</div></div>
+    <div class="ci" data-a="3.4,.5,left"><div class="ic">3</div><div class="tx"><b>Sublimite de R$ 3,6 milhões</b> passa a considerar IBS, ICMS e ISS.</div></div>
+  </div>
+  <img class="logo" src="../../marca/logo-transparente-texto-claro.png">
+</div>
+
+<!-- CENA 6 - CONTATO -->
+<div class="scene dark" data-dur="6">
+  <div class="grid"></div>
+  <span class="tag" data-a=".2,.5,pop">Fale com a gente</span>
+  <div class="h2" style="font-size:80px"><span class="w" data-a=".4,.4,up">Não</span><span class="w" data-a=".5,.4,up">decida</span><span class="w" data-a=".6,.4,up">no</span><span class="w" data-a=".7,.4,up">escuro.</span><br><span class="w t ul" data-a="1.0,.5,up">Faça a simulação.<i data-a="1.5,.6,sweep"></i></span></div>
+  <div class="people">
+    <div class="p" data-a="1.8,.5,left"><div><div class="n">Elias Carvalho</div><div class="c">CRC-PI 014153/O</div></div><div class="ph">(89) 9 9457-4219</div></div>
+    <div class="p" data-a="2.1,.5,left"><div><div class="n">Maikon Figueiredo</div><div class="c">CRC-PI 011923/O</div></div><div class="ph">(89) 9 9404-5050</div></div>
+  </div>
+  <div class="cta" data-a="2.7,.5,pop" data-pulse="3.2">Chame no WhatsApp</div>
+  <img class="logo" src="../../marca/logo-transparente-texto-claro.png">
+</div>
+
+<script src="../../modelos/reel-base.js"></script>
+</body></html>
