@@ -1,0 +1,194 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+:root{--navy:#0d161d;--navy2:#13222b;--teal:#2bd4bd;--teal2:#1e9e8c;--teal3:#0e4f47;--gray:#c4ccd4;--white:#f4f7f8;--txt:#3b4a55}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#000;font-family:'Poppins',sans-serif}
+.slide{width:1080px;height:1350px;position:relative;overflow:hidden;margin-bottom:20px;padding:96px 90px}
+.dark{background:linear-gradient(200deg,#173436 0%,var(--navy2) 38%,var(--navy) 100%);color:var(--white)}
+.light{background:linear-gradient(160deg,#ffffff 0%,#eef4f3 100%);color:var(--navy)}
+.dots{position:absolute;inset:0;background-image:radial-gradient(rgba(43,212,189,.18) 2px,transparent 2px);background-size:44px 44px;mask-image:linear-gradient(200deg,#000 0%,transparent 60%)}
+.tag{display:inline-block;font-size:24px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(--teal);border:2px solid var(--teal);padding:10px 26px;border-radius:40px;position:relative}
+.light .tag{color:var(--teal2);border-color:var(--teal2)}
+.num{position:absolute;right:90px;top:104px;font-size:26px;font-weight:600;color:#9aa8b2}
+h1{font-size:94px;line-height:1.04;font-weight:800;margin-top:40px;letter-spacing:-1.5px;position:relative}
+h1 em,h2 em{font-style:normal;color:var(--teal)}
+.light h2 em{color:var(--teal2)}
+h2{font-size:66px;line-height:1.1;font-weight:800;margin-top:34px;letter-spacing:-.5px}
+.lead{font-size:34px;line-height:1.45;color:var(--gray);margin-top:30px;max-width:520px;position:relative}
+.light .lead{color:var(--txt)}
+.logo{position:absolute;left:90px;bottom:80px;height:62px}
+.swipe{position:absolute;right:90px;bottom:92px;font-size:26px;font-weight:600;color:var(--teal);letter-spacing:2px}
+.light .swipe{color:var(--teal2)}
+.ill{position:absolute}
+.law{position:absolute;left:90px;bottom:200px;font-size:26px;font-weight:600;color:var(--teal);background:rgba(43,212,189,.1);border:1.5px solid rgba(43,212,189,.4);padding:14px 26px;border-radius:16px}
+
+/* s2 comparação */
+.vs{display:flex;gap:26px;margin-top:50px}
+.col{flex:1;border-radius:28px;padding:44px 38px;min-height:500px;position:relative}
+.col.old{background:#e6ecee;color:#5d6d78}
+.col.new{background:var(--navy);color:var(--white);box-shadow:0 24px 60px rgba(13,22,29,.25)}
+.col .h{font-size:24px;font-weight:700;letter-spacing:3px;text-transform:uppercase}
+.col.new .h{color:var(--teal)}
+.col .b{font-size:42px;font-weight:800;line-height:1.15;margin-top:16px}
+.col .s{font-size:30px;line-height:1.45;margin-top:22px}
+.col.old .b{text-decoration:line-through;text-decoration-thickness:4px;text-decoration-color:#d06a5f}
+.col.new .s{color:var(--gray)}
+.plus{margin-top:34px;background:#fff;border-radius:24px;padding:30px 36px;border-left:10px solid var(--teal2);box-shadow:0 18px 50px rgba(14,79,71,.1);font-size:30px;line-height:1.4;color:var(--txt)}
+.plus b{color:var(--navy)}
+
+/* s3 exemplo barras */
+.ex{font-size:24px;font-weight:600;color:#7b8a94;letter-spacing:2px;text-transform:uppercase;margin-top:40px}
+.bars{display:flex;align-items:flex-end;gap:60px;height:470px;margin-top:20px;padding:0 40px;border-bottom:3px solid #c9d6d9}
+.bar{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%}
+.bar .val{font-size:42px;font-weight:800;margin-bottom:14px}
+.bar .r{width:100%;border-radius:20px 20px 0 0}
+.bar.a .r{height:110px;background:#c9d6d9}
+.bar.b .r{height:400px;background:linear-gradient(180deg,var(--teal) 0%,var(--teal2) 100%)}
+.bar.b .val{color:var(--teal2)}
+.lbls{display:flex;gap:60px;padding:0 40px;margin-top:18px}
+.lbls div{flex:1;text-align:center;font-size:26px;line-height:1.3;color:var(--txt);font-weight:600}
+.badge{position:absolute;right:120px;top:560px;background:var(--navy);color:var(--teal);font-size:40px;font-weight:800;padding:16px 28px;border-radius:20px}
+.foot{font-size:24px;color:#7b8a94;margin-top:34px;line-height:1.4}
+
+/* s4 alíquota */
+.rules{margin-top:54px;display:flex;flex-direction:column;gap:30px}
+.rule{display:flex;gap:28px;align-items:flex-start;background:#fff;border-radius:26px;padding:38px 36px;box-shadow:0 16px 44px rgba(14,79,71,.09)}
+.rule .ic{flex:0 0 84px;height:84px;border-radius:22px;background:linear-gradient(160deg,var(--teal) 0%,var(--teal2) 100%);display:flex;align-items:center;justify-content:center;font-size:40px;font-weight:800;color:var(--navy)}
+.rule .k{font-size:36px;font-weight:700;line-height:1.2}
+.rule .d{font-size:30px;line-height:1.4;color:var(--txt);margin-top:8px}
+
+/* s5 fechamento */
+.checks{margin-top:44px;display:flex;flex-direction:column;gap:22px}
+.ck{display:flex;gap:22px;align-items:center;font-size:32px;line-height:1.3;color:var(--white)}
+.ck i{flex:0 0 48px;height:48px;border-radius:50%;background:var(--teal);color:var(--navy);font-style:normal;font-weight:800;font-size:28px;display:flex;align-items:center;justify-content:center}
+.people{display:flex;gap:26px;margin-top:56px}
+.p{flex:1;background:rgba(255,255,255,.05);border:1.5px solid rgba(43,212,189,.35);border-radius:26px;padding:30px 32px}
+.p .n{font-size:32px;font-weight:700}
+.p .c{font-size:23px;color:var(--teal);margin-top:6px;font-weight:600}
+.p .t{font-size:28px;color:var(--gray);margin-top:12px}
+.cta{display:inline-block;margin-top:50px;background:var(--teal);color:var(--navy);font-size:34px;font-weight:700;padding:24px 46px;border-radius:60px}
+.checks .ck{font-size:34px}
+</style></head><body>
+
+<!-- S1 CAPA -->
+<div class="slide dark" id="s1">
+  <div class="dots"></div>
+  <span class="tag">Holding · ITCMD</span>
+  <h1>Doar quotas<br>da holding<br><em>pode ficar<br>mais caro.</em></h1>
+  <p class="lead">O ITCMD passa a usar o valor de mercado, não o valor do balanço.</p>
+  <svg class="ill" style="right:30px;bottom:170px" width="520" height="560" viewBox="0 0 560 600">
+    <defs>
+      <linearGradient id="a1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1e9e8c"/><stop offset="1" stop-color="#0b3f39"/></linearGradient>
+      <linearGradient id="a2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2bd4bd"/><stop offset="1" stop-color="#14786b"/></linearGradient>
+      <linearGradient id="a3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8ff3e3"/><stop offset="1" stop-color="#2bd4bd"/></linearGradient>
+      <radialGradient id="gl"><stop offset="0" stop-color="#2bd4bd" stop-opacity=".35"/><stop offset="1" stop-color="#2bd4bd" stop-opacity="0"/></radialGradient>
+    </defs>
+    <ellipse cx="280" cy="520" rx="270" ry="80" fill="url(#gl)"/>
+    <polygon points="280,560 50,445 280,330 510,445" fill="#16303a" stroke="#2bd4bd" stroke-opacity=".4" stroke-width="2"/>
+    <!-- prédio holding -->
+    <polygon points="230,470 140,425 140,230 230,275" fill="url(#a1)"/>
+    <polygon points="230,470 320,425 320,230 230,275" fill="url(#a2)"/>
+    <polygon points="230,275 140,230 230,185 320,230" fill="url(#a3)"/>
+    <g fill="#8ff3e3" opacity=".5">
+      <polygon points="160,270 182,281 182,305 160,294"/><polygon points="196,288 218,299 218,323 196,312"/>
+      <polygon points="160,330 182,341 182,365 160,354"/><polygon points="196,348 218,359 218,383 196,372"/>
+      <polygon points="160,390 182,401 182,425 160,414"/>
+    </g>
+    <g fill="#0d161d" opacity=".35">
+      <polygon points="245,299 267,288 267,312 245,323"/><polygon points="281,281 303,270 303,294 281,305"/>
+      <polygon points="245,359 267,348 267,372 245,383"/><polygon points="281,341 303,330 303,354 281,365"/>
+    </g>
+    <!-- blocos de quotas -->
+    <g transform="translate(420,440)">
+      <polygon points="0,30 -50,5 -50,-25 0,0" fill="#0e4f47"/><polygon points="0,30 50,5 50,-25 0,0" fill="#1e9e8c"/><polygon points="0,0 -50,-25 0,-50 50,-25" fill="#8ff3e3"/>
+      <polygon points="0,-30 -50,-55 -50,-85 0,-60" fill="#0e4f47"/><polygon points="0,-30 50,-55 50,-85 0,-60" fill="#1e9e8c"/><polygon points="0,-60 -50,-85 0,-110 50,-85" fill="#8ff3e3"/>
+    </g>
+    <!-- seta de alta -->
+    <g>
+      <path d="M380,330 L450,260 L480,285 L540,200" fill="none" stroke="#2bd4bd" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+      <polygon points="548,188 552,246 500,222" fill="#2bd4bd"/>
+    </g>
+    <!-- moedas -->
+    <g transform="translate(80,250)">
+      <ellipse cx="0" cy="40" rx="42" ry="17" fill="#14786b"/><rect x="-42" y="22" width="84" height="18" fill="#14786b"/><ellipse cx="0" cy="22" rx="42" ry="17" fill="#2bd4bd"/>
+      <ellipse cx="0" cy="2" rx="42" ry="17" fill="#14786b"/><rect x="-42" y="-16" width="84" height="18" fill="#14786b"/><ellipse cx="0" cy="-16" rx="42" ry="17" fill="#2bd4bd"/>
+      <text x="0" y="-8" text-anchor="middle" font-family="Poppins" font-weight="800" font-size="22" fill="#0d161d">R$</text>
+    </g>
+  </svg>
+  <div class="law">Lei Complementar 227/2026</div>
+  <img class="logo" src="../../marca/logo-transparente-texto-claro.png">
+  <div class="swipe">ARRASTE →</div>
+</div>
+
+<!-- S2 ANTES x AGORA -->
+<div class="slide light" id="s2">
+  <div class="num">2/5</div>
+  <span class="tag">Base de cálculo</span>
+  <h2>Quotas de empresa fechada: <em>o que vale agora</em></h2>
+  <div class="vs">
+    <div class="col old">
+      <div class="h">Como muitos faziam</div>
+      <div class="b">Valor contábil</div>
+      <div class="s">Patrimônio líquido do balanço, com imóveis pelo custo antigo de compra.</div>
+    </div>
+    <div class="col new">
+      <div class="h">LC 227/2026</div>
+      <div class="b">Valor de mercado</div>
+      <div class="s">Avaliação técnica. No mínimo, o patrimônio líquido ajustado: bens e dívidas a valor de mercado.</div>
+    </div>
+  </div>
+  <div class="plus"><b>+ fundo de comércio:</b> marca, carteira de clientes e capacidade de gerar caixa podem entrar na conta.</div>
+  <img class="logo" src="../../marca/logo-transparente-texto-escuro.png">
+  <div class="swipe">ARRASTE →</div>
+</div>
+
+<!-- S3 EXEMPLO -->
+<div class="slide light" id="s3">
+  <div class="num">3/5</div>
+  <span class="tag">Na prática</span>
+  <h2>Holding com imóveis: <em>a base pode multiplicar</em></h2>
+  <div class="ex">Exemplo hipotético · mesmo imóvel</div>
+  <div class="bars">
+    <div class="bar a"><div class="val">R$ 500 mil</div><div class="r"></div></div>
+    <div class="bar b"><div class="val">R$ 2 milhões</div><div class="r"></div></div>
+  </div>
+  <div class="lbls"><div>Valor no balanço<br>(custo de compra)</div><div>Valor de mercado<br>hoje</div></div>
+  <p class="foot">Se o imposto passa a incidir sobre o valor de mercado, a base deste exemplo fica 4 vezes maior, com a mesma alíquota.</p>
+  <img class="logo" src="../../marca/logo-transparente-texto-escuro.png">
+  <div class="swipe">ARRASTE →</div>
+</div>
+
+<!-- S4 OUTRAS REGRAS -->
+<div class="slide light" id="s4">
+  <div class="num">4/5</div>
+  <span class="tag">Outras regras</span>
+  <h2>O que mais <em>entra no radar</em></h2>
+  <div class="rules">
+    <div class="rule"><div class="ic">%</div><div><div class="k">Alíquota progressiva obrigatória</div><div class="d">Quanto maior a herança ou a doação, maior a alíquota. Teto de 8% (Resolução do Senado 9/1992).</div></div></div>
+    <div class="rule"><div class="ic">+</div><div><div class="k">Doações somadas</div><div class="d">Doações entre as mesmas pessoas, no prazo que o estado definir, podem ser somadas para achar a alíquota.</div></div></div>
+    <div class="rule"><div class="ic">!</div><div><div class="k">Venda simbólica entre parentes</div><div class="d">Pode ser tratada como doação se não houver prova de capacidade financeira de quem compra.</div></div></div>
+  </div>
+  <img class="logo" src="../../marca/logo-transparente-texto-escuro.png">
+  <div class="swipe">ARRASTE →</div>
+</div>
+
+<!-- S5 FECHAMENTO -->
+<div class="slide dark" id="s5">
+  <div class="dots"></div>
+  <div class="num">5/5</div>
+  <span class="tag">Quando vale?</span>
+  <h2 style="font-size:62px">Cada estado precisa de lei própria. <em>Lei estadual publicada em 2026 só vale a partir de 2027.</em></h2>
+  <div class="checks">
+    <div class="ck"><i>✓</i>Revise o valor das quotas da sua holding</div>
+    <div class="ck"><i>✓</i>Guarde laudo e memória de cálculo</div>
+    <div class="ck"><i>✓</i>Simule doação e sucessão antes de agir</div>
+  </div>
+  <div class="people">
+    <div class="p"><div class="n">Elias Carvalho</div><div class="c">CRC-PI 014153/O</div><div class="t">(89) 99457-4219</div></div>
+    <div class="p"><div class="n">Maikon Figueiredo</div><div class="c">CRC-PI 011923/O</div><div class="t">(89) 99404-5050</div></div>
+  </div>
+  <div class="cta">Chame no WhatsApp</div>
+  <img class="logo" src="../../marca/logo-transparente-texto-claro.png">
+</div>
+</body></html>
