@@ -1,0 +1,192 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+:root{--navy:#0d161d;--navy2:#13222b;--teal:#2bd4bd;--teal2:#1e9e8c;--teal3:#0e4f47;--gray:#c4ccd4;--white:#f4f7f8;--ink:#3b4a55}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#000;font-family:'Poppins',sans-serif}
+.slide{width:1080px;height:1350px;position:relative;overflow:hidden;margin-bottom:20px;padding:96px 90px}
+.dark{background:radial-gradient(ellipse at 15% 85%,#163a37 0%,var(--navy2) 45%,var(--navy) 100%);color:var(--white)}
+.light{background:linear-gradient(170deg,#ffffff 0%,#edf3f2 100%);color:var(--navy)}
+.dots{position:absolute;inset:0;background-image:radial-gradient(rgba(43,212,189,.18) 2px,transparent 2px);background-size:44px 44px;mask-image:linear-gradient(200deg,#000 0%,transparent 55%)}
+.tag{display:inline-block;font-size:24px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(--teal);border:2px solid var(--teal);padding:10px 26px;border-radius:40px;position:relative}
+.light .tag{color:var(--teal2);border-color:var(--teal2)}
+h1{font-size:96px;line-height:1.04;font-weight:800;margin-top:40px;position:relative;letter-spacing:-1.5px}
+h1 em,h2 em{font-style:normal;color:var(--teal)}
+.light h2 em{color:var(--teal2)}
+h2{font-size:66px;line-height:1.1;font-weight:800;margin-top:34px;letter-spacing:-.5px;position:relative}
+p.lead{font-size:34px;line-height:1.45;margin-top:30px;color:var(--gray);max-width:860px;position:relative}
+.light p.lead{color:var(--ink)}
+.logo{position:absolute;left:90px;bottom:80px;height:62px}
+.swipe{position:absolute;right:90px;bottom:92px;font-size:26px;font-weight:600;color:var(--teal);letter-spacing:2px}
+.light .swipe{color:var(--teal2)}
+.num{position:absolute;right:90px;top:104px;font-size:26px;font-weight:600;color:#9aa8b2}
+.ill{position:absolute}
+/* capa: data */
+.date{position:absolute;left:90px;top:700px;display:flex;align-items:flex-end;gap:22px}
+.date .d{font-size:230px;font-weight:800;line-height:.82;letter-spacing:-10px;background:linear-gradient(180deg,#7ff0de 0%,var(--teal2) 100%);-webkit-background-clip:text;color:transparent}
+.date .m{font-size:40px;font-weight:700;line-height:1.15;color:var(--white);padding-bottom:6px}
+.date .m span{display:block;color:var(--teal);font-size:30px;font-weight:600;letter-spacing:3px}
+/* s2: notas */
+.doc{display:flex;gap:34px;align-items:center;background:#fff;border-radius:30px;padding:38px 40px;box-shadow:0 20px 60px rgba(14,79,71,.12);margin-top:34px}
+.doc .ic{flex:0 0 150px;height:150px;border-radius:26px;background:linear-gradient(150deg,#e3f7f3 0%,#c7eee7 100%);display:flex;align-items:center;justify-content:center}
+.doc .op{font-size:26px;font-weight:600;color:var(--teal2);text-transform:uppercase;letter-spacing:2px}
+.doc .nm{font-size:46px;font-weight:800;line-height:1.1;margin-top:4px}
+.doc .ds{font-size:27px;color:var(--ink);margin-top:8px;line-height:1.35}
+.strip{margin-top:40px;display:flex;align-items:center;gap:22px;font-size:30px;font-weight:600;color:var(--navy)}
+.strip b{background:var(--navy);color:var(--teal);padding:12px 26px;border-radius:16px;font-weight:700}
+/* s3: quem */
+.who{margin-top:40px;display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.box{border-radius:28px;padding:36px 34px}
+.box.yes{background:var(--navy);color:var(--white)}
+.box.no{background:#fff;border:2px solid #cfe2df}
+.box .h{display:flex;align-items:center;gap:16px;font-size:34px;font-weight:800}
+.box .h i{font-style:normal;width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:32px}
+.box.yes .h i{background:var(--teal);color:var(--navy)}
+.box.no .h i{background:#e3eceb;color:var(--ink)}
+.box ul{list-style:none;margin-top:22px}
+.box li{font-size:28px;line-height:1.35;padding:12px 0;border-top:1px solid rgba(43,212,189,.25)}
+.box.no li{border-top-color:#e1ebe9;color:var(--ink)}
+.note{margin-top:30px;background:#e3f7f3;border-radius:24px;padding:30px 36px;font-size:28px;line-height:1.45;color:var(--navy)}
+.note b{color:var(--teal3)}
+/* s4: linha do tempo */
+.tl{position:relative;margin-top:56px;padding-left:70px}
+.tl:before{content:"";position:absolute;left:22px;top:20px;bottom:30px;width:6px;border-radius:3px;background:linear-gradient(180deg,#b9cfcc 0%,var(--teal2) 50%,var(--teal) 100%)}
+.st{position:relative;margin-bottom:44px}
+.st:before{content:"";position:absolute;left:-62px;top:10px;width:30px;height:30px;border-radius:50%;background:#fff;border:6px solid var(--teal2)}
+.st.on:before{background:var(--teal);border-color:var(--navy);width:38px;height:38px;left:-66px;top:6px}
+.st .w{font-size:28px;font-weight:700;color:var(--teal2);letter-spacing:1px;text-transform:uppercase}
+.st .t{font-size:40px;font-weight:800;line-height:1.15;margin-top:4px}
+.st .x{font-size:28px;color:var(--ink);line-height:1.4;margin-top:6px;max-width:800px}
+/* s5 */
+.people{display:flex;gap:30px;margin-top:60px;position:relative}
+.p{flex:1;background:rgba(255,255,255,.05);border:1.5px solid rgba(43,212,189,.35);border-radius:26px;padding:34px}
+.p .n{font-size:34px;font-weight:700}
+.p .c{font-size:24px;color:var(--teal);margin-top:6px;font-weight:600}
+.p .t{font-size:28px;color:var(--gray);margin-top:14px}
+.chk{list-style:none;margin-top:44px;position:relative}
+.chk li{font-size:32px;line-height:1.35;padding:14px 0 14px 60px;position:relative;color:var(--white)}
+.chk li:before{content:"✓";position:absolute;left:0;top:12px;width:42px;height:42px;border-radius:12px;background:var(--teal);color:var(--navy);font-weight:800;font-size:28px;display:flex;align-items:center;justify-content:center}
+</style></head><body>
+
+<!-- SLIDE 1 -->
+<div class="slide dark" id="s1">
+  <div class="dots"></div>
+  <span class="tag">Reforma Tributária · Imóveis</span>
+  <h1>Imóvel vai ter<br><em>nota fiscal</em><br>própria.</h1>
+  <p class="lead" style="max-width:560px">Venda e aluguel ganham documento fiscal novo.</p>
+  <div class="date"><div class="d">1º</div><div class="m"><span>A PARTIR DE</span>dezembro<br>de 2026</div></div>
+  <svg class="ill" style="right:30px;top:330px" width="500" height="640" viewBox="0 0 500 640">
+    <defs>
+      <linearGradient id="a1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1e9e8c"/><stop offset="1" stop-color="#0b3f39"/></linearGradient>
+      <linearGradient id="a2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2bd4bd"/><stop offset="1" stop-color="#14786b"/></linearGradient>
+      <linearGradient id="a3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#d7e4e6"/></linearGradient>
+      <radialGradient id="gw"><stop offset="0" stop-color="#2bd4bd" stop-opacity=".35"/><stop offset="1" stop-color="#2bd4bd" stop-opacity="0"/></radialGradient>
+    </defs>
+    <ellipse cx="250" cy="560" rx="240" ry="70" fill="url(#gw)"/>
+    <polygon points="250,600 40,495 250,390 460,495" fill="#16303a" stroke="#2bd4bd" stroke-opacity=".4" stroke-width="2"/>
+    <!-- casa -->
+    <polygon points="200,540 100,490 100,380 200,430" fill="url(#a1)"/>
+    <polygon points="200,540 300,490 300,380 200,430" fill="url(#a2)"/>
+    <polygon points="100,380 150,290 250,340 200,430" fill="#e6eef0"/>
+    <polygon points="200,430 250,340 300,380" fill="#b9c6cc"/>
+    <polygon points="230,505 260,490 260,445 230,460" fill="#0d161d"/>
+    <polygon points="125,445 160,462 160,490 125,473" fill="#7ff0de" opacity=".6"/>
+    <!-- nota fiscal flutuando -->
+    <g transform="translate(250,40)">
+      <polygon points="40,40 200,0 200,250 40,290" fill="url(#a3)"/>
+      <polygon points="200,0 214,8 214,258 200,250" fill="#9fb3b8"/>
+      <polygon points="40,290 200,250 214,258 54,298" fill="#8aa0a6"/>
+      <g fill="#0e4f47">
+        <polygon points="62,78 150,56 150,70 62,92"/>
+      </g>
+      <g fill="#b6c8cc">
+        <polygon points="62,118 180,89 180,99 62,128"/>
+        <polygon points="62,146 180,117 180,127 62,156"/>
+        <polygon points="62,174 160,150 160,160 62,184"/>
+      </g>
+      <polygon points="62,222 180,193 180,223 62,252" fill="#2bd4bd"/>
+      <text x="118" y="230" font-family="Poppins" font-weight="800" font-size="22" fill="#0d161d" transform="rotate(-14 118 230)">IBS · CBS</text>
+    </g>
+    <path d="M330 340 Q 300 370 270 360" stroke="#2bd4bd" stroke-width="3" fill="none" stroke-dasharray="8 8"/>
+  </svg>
+  <img class="logo" src="../../marca/logo-transparente-texto-claro.png">
+  <div class="swipe">ARRASTE →</div>
+</div>
+
+<!-- SLIDE 2 -->
+<div class="slide light" id="s2">
+  <div class="num">2/5</div>
+  <span class="tag">O que muda</span>
+  <h2>Cada operação com imóvel terá <em>a sua nota</em>.</h2>
+  <div class="doc">
+    <div class="ic"><svg width="110" height="110" viewBox="0 0 110 110"><polygon points="55,98 14,77 14,45 55,66" fill="#0e4f47"/><polygon points="55,98 96,77 96,45 55,66" fill="#1e9e8c"/><polygon points="14,45 35,14 76,35 55,66" fill="#2bd4bd"/><polygon points="55,66 76,35 96,45" fill="#7ff0de"/><polygon points="70,86 80,81 80,64 70,69" fill="#0d161d"/></svg></div>
+    <div><div class="op">Venda e permuta</div><div class="nm">NF-e ABI</div><div class="ds">Nota de alienação de bens imóveis (modelo 77). Vale também para cessão de direitos sobre o imóvel.</div></div>
+  </div>
+  <div class="doc">
+    <div class="ic"><svg width="110" height="110" viewBox="0 0 110 110"><polygon points="44,98 10,81 10,40 44,57" fill="#0e4f47"/><polygon points="44,98 78,81 78,40 44,57" fill="#1e9e8c"/><polygon points="10,40 44,23 78,40 44,57" fill="#2bd4bd"/><circle cx="84" cy="30" r="17" fill="none" stroke="#0d161d" stroke-width="7"/><rect x="80" y="44" width="8" height="40" rx="3" fill="#0d161d"/><rect x="88" y="66" width="12" height="7" fill="#0d161d"/><rect x="88" y="76" width="9" height="7" fill="#0d161d"/></svg></div>
+    <div><div class="op">Aluguel e arrendamento</div><div class="nm">NFS-e</div><div class="ds">A nota fiscal de serviço eletrônica passa a valer para locação de imóveis.</div></div>
+  </div>
+  <div class="strip"><b>01/12/2026</b> é a data de início para as duas.</div>
+  <img class="logo" src="../../marca/logo-transparente-texto-escuro.png">
+  <div class="swipe">ARRASTE →</div>
+</div>
+
+<!-- SLIDE 3 -->
+<div class="slide light" id="s3">
+  <div class="num">3/5</div>
+  <span class="tag">Quem emite</span>
+  <h2>Quem vende ou aluga <em>como atividade</em>.</h2>
+  <div class="who">
+    <div class="box yes">
+      <div class="h"><i>✓</i>Emite</div>
+      <ul>
+        <li>Construtoras e incorporadoras</li>
+        <li>Loteadoras</li>
+        <li>Empresas e holdings que vendem ou alugam imóveis</li>
+      </ul>
+    </div>
+    <div class="box no">
+      <div class="h"><i>–</i>Em regra, não</div>
+      <ul>
+        <li>Quem vende a própria casa uma vez</li>
+        <li>Quem aluga poucos imóveis como pessoa física</li>
+      </ul>
+    </div>
+  </div>
+  <div class="note"><b>Atenção, pessoa física:</b> quem tem mais de 3 imóveis alugados e recebeu mais de R$ 240 mil de aluguel no ano anterior passa a ser contribuinte. <b>Simples Nacional:</b> começa em 1º/01/2027.</div>
+  <img class="logo" src="../../marca/logo-transparente-texto-escuro.png">
+  <div class="swipe">ARRASTE →</div>
+</div>
+
+<!-- SLIDE 4 -->
+<div class="slide light" id="s4">
+  <div class="num">4/5</div>
+  <span class="tag">E o imposto?</span>
+  <h2>Em dezembro, é <em>só a nota</em>. A cobrança vem depois.</h2>
+  <div class="tl">
+    <div class="st"><div class="w">2026 · ano de teste</div><div class="t">IBS e CBS aparecem na nota</div><div class="x">Quem cumpre as obrigações fica dispensado de recolher.</div></div>
+    <div class="st on"><div class="w">1º de dezembro de 2026</div><div class="t">Nota obrigatória na venda e no aluguel</div><div class="x">Hora de ter sistema, cadastro e contratos em ordem.</div></div>
+    <div class="st"><div class="w">2027</div><div class="t">Começa a cobrança da CBS</div><div class="x">Com as reduções do regime de imóveis já previstas em lei.</div></div>
+  </div>
+  <img class="logo" src="../../marca/logo-transparente-texto-escuro.png">
+  <div class="swipe">ARRASTE →</div>
+</div>
+
+<!-- SLIDE 5 -->
+<div class="slide dark" id="s5">
+  <div class="dots"></div>
+  <div class="num">5/5</div>
+  <span class="tag">Prepare-se</span>
+  <h1 style="font-size:78px">Faltam poucas semanas.<br><em>Organize agora.</em></h1>
+  <ul class="chk">
+    <li>Veja se você ou sua empresa precisa emitir</li>
+    <li>Confira o sistema emissor de notas</li>
+    <li>Revise contratos de venda e de aluguel</li>
+  </ul>
+  <div class="people">
+    <div class="p"><div class="n">Elias Carvalho</div><div class="c">CRC-PI 014153/O</div><div class="t">(89) 99457-4219</div></div>
+    <div class="p"><div class="n">Maikon Figueiredo</div><div class="c">CRC-PI 011923/O</div><div class="t">(89) 99404-5050</div></div>
+  </div>
+  <img class="logo" src="../../marca/logo-transparente-texto-claro.png">
+</div>
+</body></html>
