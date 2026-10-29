@@ -1,0 +1,176 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+:root{--navy:#0d161d;--navy2:#13222b;--teal:#2bd4bd;--teal2:#1e9e8c;--teal3:#0e4f47;--gray:#c4ccd4;--white:#f4f7f8;--txt:#3b4a55}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#000;font-family:'Poppins',sans-serif}
+.slide{width:1080px;height:1350px;position:relative;overflow:hidden;margin-bottom:20px;padding:96px 90px}
+.dark{background:radial-gradient(ellipse at 15% 85%,#163a37 0%,var(--navy2) 45%,var(--navy) 100%);color:var(--white)}
+.light{background:linear-gradient(170deg,#ffffff 0%,#eef4f3 100%);color:var(--navy)}
+.dots{position:absolute;inset:0;background-image:radial-gradient(rgba(43,212,189,.18) 2px,transparent 2px);background-size:44px 44px;mask-image:linear-gradient(200deg,#000 0%,transparent 55%)}
+.tag{display:inline-block;font-size:24px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(--teal);border:2px solid var(--teal);padding:10px 26px;border-radius:40px;position:relative}
+.light .tag{color:var(--teal2);border-color:var(--teal2)}
+h1{font-size:84px;line-height:1.06;font-weight:800;margin-top:40px;position:relative;letter-spacing:-1px}
+h1 em,h2 em{font-style:normal;color:var(--teal)}
+.light h2 em{color:var(--teal2)}
+h2{font-size:64px;line-height:1.1;font-weight:800;margin-top:34px;letter-spacing:-.5px}
+p.lead{font-size:34px;line-height:1.45;margin-top:30px;color:var(--gray);position:relative}
+.light p.lead{color:var(--txt)}
+.logo{position:absolute;left:90px;bottom:80px;height:62px}
+.swipe{position:absolute;right:90px;bottom:92px;font-size:26px;font-weight:600;color:var(--teal);letter-spacing:2px}
+.light .swipe{color:var(--teal2)}
+.num{position:absolute;right:90px;top:104px;font-size:26px;font-weight:600;color:#9aa8b2}
+.ill{position:absolute}
+.stamp{position:absolute;left:90px;top:760px;display:flex;align-items:center;gap:22px;background:rgba(43,212,189,.1);border:2px solid rgba(43,212,189,.5);border-radius:22px;padding:22px 30px}
+.stamp b{font-size:54px;font-weight:800;color:var(--teal);line-height:1}
+.stamp span{font-size:25px;color:var(--gray);line-height:1.35}
+/* antes x agora */
+.vs{display:flex;flex-direction:column;gap:26px;margin-top:50px}
+.row{display:flex;align-items:stretch;border-radius:26px;overflow:hidden;box-shadow:0 18px 50px rgba(14,79,71,.12)}
+.row .lab{width:210px;display:flex;align-items:center;justify-content:center;font-size:30px;font-weight:800;letter-spacing:2px}
+.row .txt{flex:1;background:#fff;padding:34px 38px;font-size:32px;line-height:1.4;color:var(--txt)}
+.row .txt b{color:var(--navy)}
+.before .lab{background:#dfe6e9;color:#6b7a84}
+.after .lab{background:var(--teal2);color:#fff}
+.foot{font-size:23px;color:#7b8a94;margin-top:30px;line-height:1.45}
+/* lista */
+.list{margin-top:44px;display:flex;flex-direction:column;gap:22px}
+.it{display:flex;gap:26px;align-items:flex-start;background:#fff;border-radius:24px;padding:32px 36px;box-shadow:0 14px 40px rgba(14,79,71,.10)}
+.ic{flex:none;width:62px;height:62px;border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:34px;font-weight:800;color:#fff;background:linear-gradient(135deg,var(--teal),var(--teal2))}
+.ic.x{background:linear-gradient(135deg,#f08a7a,#c95545)}
+.it .t{font-size:31px;line-height:1.38;color:var(--txt)}
+.it .t b{color:var(--navy)}
+/* exemplo */
+.calc{margin-top:50px;background:var(--navy);border-radius:30px;padding:40px 44px;color:var(--white)}
+.calc .l{display:flex;justify-content:space-between;align-items:center;font-size:33px;padding:16px 0;border-bottom:1.5px solid rgba(196,204,212,.18)}
+.calc .l:last-child{border:none}
+.calc .l span{color:var(--gray)}
+.calc .l b{font-weight:700}
+.calc .hl b{color:var(--teal);font-size:38px}
+/* checklist final */
+.chk{margin-top:50px;display:flex;flex-direction:column;gap:30px;position:relative}
+.ck{display:flex;gap:22px;align-items:flex-start;font-size:32px;line-height:1.38;color:var(--gray)}
+.ck i{flex:none;width:44px;height:44px;border-radius:50%;border:2.5px solid var(--teal);display:flex;align-items:center;justify-content:center;font-style:normal;color:var(--teal);font-weight:800;font-size:24px;margin-top:2px}
+.ck b{color:var(--white)}
+.people{display:flex;gap:26px;margin-top:70px;position:relative}
+.p{flex:1;background:rgba(255,255,255,.05);border:1.5px solid rgba(43,212,189,.35);border-radius:24px;padding:26px 30px}
+.p .n{font-size:31px;font-weight:700}
+.p .c{font-size:22px;color:var(--teal);margin-top:4px;font-weight:600}
+.p .t{font-size:27px;color:var(--gray);margin-top:10px}
+</style></head><body>
+
+<!-- 1 CAPA -->
+<div class="slide dark" id="s1">
+  <div class="dots"></div>
+  <span class="tag">Holdings · Decisão do STF</span>
+  <h1>Imóvel na holding:<br>o STF afastou o <em>ITBI</em> na integralização.</h1>
+  <p class="lead" style="max-width:640px">Vale também para holding com atividade imobiliária. Mas não é carta branca.</p>
+  <div class="stamp"><b>Tema<br>1.348</b><span>Julgamento concluído<br>em 19/10/2026</span></div>
+  <svg class="ill" style="right:30px;bottom:150px" width="560" height="600" viewBox="0 0 560 600">
+    <defs>
+      <linearGradient id="a1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1e9e8c"/><stop offset="1" stop-color="#0b3f39"/></linearGradient>
+      <linearGradient id="a2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2bd4bd"/><stop offset="1" stop-color="#14786b"/></linearGradient>
+      <linearGradient id="a3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7ff0de"/><stop offset="1" stop-color="#2bd4bd"/></linearGradient>
+      <radialGradient id="gw"><stop offset="0" stop-color="#2bd4bd" stop-opacity=".35"/><stop offset="1" stop-color="#2bd4bd" stop-opacity="0"/></radialGradient>
+    </defs>
+    <ellipse cx="300" cy="510" rx="260" ry="80" fill="url(#gw)"/>
+    <!-- caixa holding -->
+    <polygon points="300,560 110,465 300,370 490,465" fill="#16303a" stroke="#2bd4bd" stroke-opacity=".5" stroke-width="2"/>
+    <polygon points="300,560 110,465 110,390 300,485" fill="url(#a1)"/>
+    <polygon points="300,560 490,465 490,390 300,485" fill="url(#a2)"/>
+    <polygon points="300,485 110,390 300,295 490,390" fill="#0f2a30" stroke="#7ff0de" stroke-opacity=".6" stroke-width="2"/>
+    <g transform="matrix(1,-0.5,0,1,0,0)"><text x="330" y="680" font-family="Poppins" font-weight="800" font-size="28" fill="#0d161d" letter-spacing="2">HOLDING</text></g>
+    <!-- casa descendo -->
+    <g transform="translate(0,-20)">
+      <polygon points="300,330 230,295 230,215 300,250" fill="url(#a1)"/>
+      <polygon points="300,330 370,295 370,215 300,250" fill="url(#a2)"/>
+      <polygon points="230,215 265,150 335,185 300,250" fill="#e6eef0"/>
+      <polygon points="300,250 335,185 370,215" fill="#b9c6cc"/>
+      <polygon points="318,305 343,292 343,260 318,273" fill="#0d161d"/>
+    </g>
+    <!-- seta -->
+    <path d="M300 60 L300 120" stroke="#2bd4bd" stroke-width="6" stroke-linecap="round" stroke-dasharray="2 14"/>
+    <!-- selo ITBI riscado -->
+    <g transform="translate(455,150)">
+      <circle r="62" fill="#0d161d" stroke="#2bd4bd" stroke-width="4"/>
+      <text y="12" text-anchor="middle" font-family="Poppins" font-weight="800" font-size="34" fill="#f4f7f8">ITBI</text>
+      <line x1="-44" y1="44" x2="44" y2="-44" stroke="#2bd4bd" stroke-width="8" stroke-linecap="round"/>
+    </g>
+  </svg>
+  <img class="logo" src="../../marca/logo-transparente-texto-claro.png">
+  <div class="swipe">ARRASTE →</div>
+</div>
+
+<!-- 2 ANTES x AGORA -->
+<div class="slide light" id="s2">
+  <div class="num">2/5</div>
+  <span class="tag">O que mudou</span>
+  <h2>A Constituição já previa a imunidade. A briga era sobre <em>quem</em> tinha direito.</h2>
+  <div class="vs">
+    <div class="row before"><div class="lab">ANTES</div><div class="txt">Muitas prefeituras cobravam ITBI quando a empresa tinha como <b>atividade principal comprar, vender ou alugar imóveis</b> — o caso de várias holdings patrimoniais.</div></div>
+    <div class="row after"><div class="lab">AGORA</div><div class="txt">A imunidade na integralização de capital é <b>incondicionada</b>: vale <b>mesmo que a atividade preponderante seja imobiliária</b>.</div></div>
+  </div>
+  <p class="foot">STF, RE 1.495.108 (Tema 1.348, repercussão geral). A exigência de atividade não imobiliária fica só para fusão, incorporação, cisão e extinção de empresas (CF, art. 156, § 2º, I).</p>
+  <img class="logo" src="../../marca/logo-transparente-texto-escuro.png">
+  <div class="swipe">ARRASTE →</div>
+</div>
+
+<!-- 3 LIMITES -->
+<div class="slide light" id="s3">
+  <div class="num">3/5</div>
+  <span class="tag">Os limites</span>
+  <h2>Onde o ITBI <em>ainda pode</em> ser cobrado</h2>
+  <div class="list">
+    <div class="it"><div class="ic x">1</div><div class="t"><b>Valor acima do capital.</b> A imunidade cobre só o que vira capital social. O que exceder pode ser tributado (Tema 796 do STF).</div></div>
+    <div class="it"><div class="ic x">2</div><div class="t"><b>Simulação ou fraude.</b> Holding sem substância, montada só para esconder compra e venda de imóveis, perde a imunidade.</div></div>
+    <div class="it"><div class="ic x">3</div><div class="t"><b>Fusão, incorporação, cisão e extinção.</b> Aqui a atividade imobiliária preponderante continua barrando o benefício.</div></div>
+  </div>
+  <p class="foot" style="font-size:25px">O acórdão ainda será publicado e pode haver recursos (embargos) pedindo ajustes, inclusive sobre a partir de quando a decisão vale.</p>
+  <img class="logo" src="../../marca/logo-transparente-texto-escuro.png">
+  <div class="swipe">ARRASTE →</div>
+</div>
+
+<!-- 4 EXEMPLO -->
+<div class="slide light" id="s4">
+  <div class="num">4/5</div>
+  <span class="tag">Ponto de atenção</span>
+  <h2>A diferença para o <em>valor venal</em> é o novo foco</h2>
+  <p class="lead" style="margin-top:24px">Na holding, o imóvel costuma entrar pelo valor da declaração de IR. Vários municípios cobram ITBI sobre a diferença para o valor venal.</p>
+  <div class="calc">
+    <div class="l"><span>Valor venal (prefeitura)</span><b>R$ 800 mil</b></div>
+    <div class="l"><span>Integralizado no capital</span><b>R$ 500 mil</b></div>
+    <div class="l hl"><span>Diferença em discussão</span><b>R$ 300 mil</b></div>
+  </div>
+  <svg style="display:block;margin:30px auto 0" width="620" height="150" viewBox="0 0 620 150">
+    <defs><linearGradient id="b1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2bd4bd"/><stop offset="1" stop-color="#14786b"/></linearGradient>
+    <linearGradient id="b2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c4ccd4"/><stop offset="1" stop-color="#8a98a2"/></linearGradient></defs>
+    <rect x="0" y="20" width="620" height="44" rx="22" fill="url(#b2)"/>
+    <rect x="0" y="20" width="388" height="44" rx="22" fill="url(#b1)"/>
+    <text x="20" y="104" font-family="Poppins" font-weight="600" font-size="24" fill="#1e9e8c">Capital: imune</text>
+    <text x="600" y="104" text-anchor="end" font-family="Poppins" font-weight="600" font-size="24" fill="#6b7a84">Excedente: risco de ITBI</text>
+  </svg>
+  <p class="foot">Exemplo ilustrativo. O tema não está pacificado nos tribunais, e a LC 227/2026 passou a prever o valor venal como base do ITBI no CTN.</p>
+  <img class="logo" src="../../marca/logo-transparente-texto-escuro.png">
+  <div class="swipe">ARRASTE →</div>
+</div>
+
+<!-- 5 FECHAMENTO -->
+<div class="slide dark" id="s5">
+  <div class="dots"></div>
+  <div class="num">5/5</div>
+  <span class="tag">Antes de integralizar</span>
+  <h2 style="font-size:66px">Checklist da <em>holding</em></h2>
+  <div class="chk">
+    <div class="ck"><i>✓</i><div><b>Atos societários e avaliação</b> dos imóveis bem documentados</div></div>
+    <div class="ck"><i>✓</i><div><b>Compare</b> valor de integralização x valor venal e o destino do excedente</div></div>
+    <div class="ck"><i>✓</i><div><b>Propósito real</b>: gestão, sucessão e organização do patrimônio</div></div>
+    <div class="ck"><i>✓</i><div><b>Já pagou ITBI?</b> Guarde as guias: a devolução depende do acórdão e de eventuais recursos</div></div>
+  </div>
+  <div class="people">
+    <div class="p"><div class="n">Elias Carvalho</div><div class="c">CRC-PI 014153/O</div><div class="t">(89) 99457-4219</div></div>
+    <div class="p"><div class="n">Maikon Figueiredo</div><div class="c">CRC-PI 011923/O</div><div class="t">(89) 99404-5050</div></div>
+  </div>
+  <div style="margin-top:40px;display:inline-block;background:var(--teal);color:var(--navy);font-size:30px;font-weight:700;padding:20px 40px;border-radius:60px;position:relative">Fale com a gente antes de integralizar</div>
+  <img class="logo" src="../../marca/logo-transparente-texto-claro.png">
+</div>
+</body></html>
